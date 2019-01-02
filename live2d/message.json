@@ -1,16 +1,12 @@
 {
     "mouseover": [
-        {
-            "selector": ".mdl-cell",
-            "text": ["要看更多文章么？"]
-        },
-        {
-            "selector": ".hmdl-body a[href^='http']",
+        	{
+            "selector": ".mdl-cell a[href^='http']",
             "text": ["要看看 &lt;span style=\"color:#0099cc;\"&gt;{text}&lt;/span&gt; 么？"]
         },
-        {
-            "selector": ".hmdl-body .mdl-layout .mdl-js-layout .has-drawer .is-upgraded a[href^='http']",
-            "text": ["test...."]
+		{
+            "selector": ".hmdl-about",
+            "text": ["要和我聊天吗？"]
         },
 		{
             "selector": "#showTalkBtn",
