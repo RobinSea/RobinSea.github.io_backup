@@ -113,8 +113,12 @@ if(!norunFlag){
 		if(document.referrer !== ''){
 			var referrer = document.createElement('a');
 			referrer.href = document.referrer;
-			text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';
 			var domain = referrer.hostname.split('.')[1];
+
+			if (referrer.hostname!='robinsea.github.io'){
+			text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';			
+			}
+
 			if (domain == 'baidu') {
 				text = '嗨！ 来自 百度搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
 			}else if (domain == 'so') {
