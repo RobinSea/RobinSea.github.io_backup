@@ -1,7 +1,7 @@
 {
     "mouseover": [
         	{
-            "selector": ".mdl-navigation__link a[href^='http']",
+            "selector": ".mdl-layout__content a[href^='http']",
             "text": ["要看看 &lt;span style=\"color:#0099cc;\"&gt;{text}&lt;/span&gt; 么？"]
         },
 		{
