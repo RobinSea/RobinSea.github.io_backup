@@ -1,12 +1,8 @@
 {
     "mouseover": [
         {
-            "selector": ".container a[href^='http']",
-            "text": ["要看看 &lt;span style=\"color:#0099cc;\"&gt;{text}&lt;/span&gt; 么？"]
-        },
-        {
-            "selector": "#showInfoBtn",
-            "text": ["查看最新吐槽和站内信息"]
+            "selector": ".section-spacer",
+            "text": ["要看更多文章么？"]
         },
 		{
             "selector": "#showTalkBtn",
@@ -32,7 +28,7 @@
     "click": [
         {
             "selector": "#landlord #live2d",
-            "text": ["是…是不小心碰到了吧", "萝莉控是什么呀", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
+            "text": ["是…是不小心碰到了吧", "萝莉控是什么呀", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，有个变态一直在摸我(ó﹏ò｡)"]
         }
     ]
 }

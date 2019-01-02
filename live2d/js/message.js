@@ -115,7 +115,9 @@ if(!norunFlag){
 			referrer.href = document.referrer;
 			var domain = referrer.hostname.split('.')[1];
 
-			if (referrer.hostname!='robinsea.github.io'){
+			if (referrer.hostname=='robinsea.github.io'){
+			text = 'text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';';						
+			}else{
 			text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';			
 			}
 
