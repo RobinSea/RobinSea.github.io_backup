@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="generator" content="Hugo 0.52" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="My thoughts and rambles">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #cas {
+      position: absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      right:0;
+      margin:auto;
+      z-index: 0;
+    }
+
+ </style>
+
+  <canvas id="cas"></canvas> 
+
+    
+    <link rel="icon" type="image/png" href="https://robinsea.github.io//images/favicon.ico">
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://robinsea.github.io/images/touch/chrome-touch-icon-192x192.png">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    
+    <meta name="msapplication-TileImage" content="https://robinsea.github.io/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="https://robinsea.github.io/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="https://robinsea.github.io/css/material.grey-orange.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://robinsea.github.io/css/hmdl-style.css"/>
+    
+   <link rel="stylesheet" href="/live2d/css/live2d.css" />
+    
+    <link href="/css/github.min.css" rel="stylesheet">  
+    <script src="/js/highlight.min.js"></script> 
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <title>Test</title>
+</head>
+
+<body style="background-image: url('/images/background.jpg');">
+    <div class="hmdl-body mdl-layout mdl-js-layout has-drawer is-upgraded">        
+        <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="/">主页</a>
+                <a class="mdl-navigation__link" href="/post/">文章</a>
+                <a class="mdl-navigation__link" href="/project/">项目</a>
+                <a class="mdl-navigation__link" href="/about/">关于</a>
+                <a class="mdl-navigation__link" href="/disclaimer/">声明</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/">主页</a>
+            <a class="mdl-navigation__link" href="/post/">文章</a>
+            <a class="mdl-navigation__link" href="/project/">项目</a>
+            <a class="mdl-navigation__link" href="/about/">关于</a>
+            <a class="mdl-navigation__link" href="/disclaimer/">声明</a>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content">
+ 
+<font color="#f2eada" size="3">	
+<body onload="getYiYan()">
+	<center><b>
+			<div id="hitokoto">获取中...</div>
+	</b></center>
+  <div id="from" align="right"></div>
+</body>
+
+<script>
+  function show(){
+    fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto; 
+      var from=document.getElementById('from');
+      from.innerText='----出自：《'+data.from+'》';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+  }
+  function getYiYan(){
+    show();
+    setInterval(show, 8000);
+  }
+</script>
+</font> 
+
+
+
+
+            <div class="hmdl-list mdl-grid">
+                <div class="mdl-card mdl-shadow--4dp mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                        <h3>Test</h3>
+                    </div>                    
+
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年12月11日</span>
+                            </div>
+                            <a href="/post/golang%E4%BD%BF%E7%94%A8ffmpeg%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/"><h5 class="mdl-color-text--grey-600">Golang使用ffmpeg的那些坑</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月16日</span>
+                            </div>
+                            <a href="/post/kubenetes1.8.15%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%83%A8%E7%BD%B2/"><h5 class="mdl-color-text--grey-600">Kubenetes1.8.15二进制文件部署</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月12日</span>
+                            </div>
+                            <a href="/post/terminalvimvscode%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"><h5 class="mdl-color-text--grey-600">Terminal&amp;&amp;vim&amp;&amp;vscode的基本使用</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月11日</span>
+                            </div>
+                            <a href="/post/go%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><h5 class="mdl-color-text--grey-600">Go学习总结</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月10日</span>
+                            </div>
+                            <a href="/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%B8%89-%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2k8s%E9%9B%86%E7%BE%A4/"><h5 class="mdl-color-text--grey-600">K8s关键知识点汇总（三）----快速部署k8s集群</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月10日</span>
+                            </div>
+                            <a href="/post/%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E4%B8%80/"><h5 class="mdl-color-text--grey-600">镜像制作（一）</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月09日</span>
+                            </div>
+                            <a href="/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%BA%8C-k8s%E4%B9%8Bkubectl%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"><h5 class="mdl-color-text--grey-600">K8s关键知识点汇总（二）----K8s之kubectl操作命令</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月09日</span>
+                            </div>
+                            <a href="/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%B8%80/"><h5 class="mdl-color-text--grey-600">K8s关键知识点汇总（一）</h5></a>
+                        </div>
+                    </div>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">RobinSea</a></strong>
+                                <span>2018年10月09日</span>
+                            </div>
+                            <a href="/post/godockerkubernetesk8sgit-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><h5 class="mdl-color-text--grey-600">Go&amp;&amp;docker&amp;&amp;kubernetes(k8s)&amp;&amp;git   学习总结</h5></a>
+                        </div>
+                    </div>                    
+
+                </div>
+            </div>
+            	
+
+	<script type="text/javascript">
+	try{
+	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+	       
+	}else{
+	!function() {
+	var canvas = document.getElementById('cas');
+	var ctx = canvas.getContext('2d');
+	var rgb = '255';      
+	var extendDis = 5;   
+	var lineDis = 100;    
+	lineDis *= lineDis;
+	resize();
+	window.onresize = resize;
+	function resize() {
+	canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	}
+
+	var RAF = (function() {
+	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+	    window.setTimeout(callback, 1000 / 60);
+	  };
+	})();
+	
+	var warea = {x: null, y: null};
+	window.onmousemove = function(e) {
+	e = e || window.event;
+	warea.x = e.clientX - canvas.offsetLeft;
+	warea.y = e.clientY - canvas.offsetTop;
+	};
+	window.onmouseout = function(e) {
+	warea.x = null;
+	warea.y = null;
+	};
+	
+	
+	var dots = [];
+	for (var i = 0; i < 150; i++) {
+	var x = Math.random() * (canvas.width + 2 * extendDis) - extendDis;
+	var y = Math.random() * (canvas.height + 2 * extendDis) - extendDis;
+	var xa = (Math.random() * 2 - 1) / 1.5;
+	var ya = (Math.random() * 2 - 1) / 1.5;
+	dots.push({
+	x: x,
+	y: y,
+	xa: xa,
+	ya: ya
+	})
+	}
+	
+	setTimeout(function() {
+	animate();
+	}, 100);
+	
+	function animate() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	bubDrawLine([warea].concat(dots));
+	RAF(animate);
+	}
+	
+
+	function bubDrawLine(ndots) {
+	var ndot;
+	dots.forEach(function(dot) {
+	move(dot);
+	
+	for (var i = 0; i < ndots.length; i++) {
+	  ndot = ndots[i];
+	  if (dot === ndot || ndot.x === null || ndot.y === null) continue;
+	  var xc = dot.x - ndot.x;
+	  var yc = dot.y - ndot.y;
+	  
+	  if (xc > ndot.max || yc > lineDis) continue;
+	  
+	  var dis = xc * xc + yc * yc;
+	  
+	  if (dis > lineDis) continue;
+	  
+	  var ratio;
+	  
+	  if (ndot === warea && dis < 20000) {
+	    dot.x -= xc * 0.01;
+	    dot.y -= yc * 0.01;
+	  }
+	  
+	  ratio = (lineDis - dis) / lineDis;
+	  
+	  ctx.beginPath();
+	  ctx.lineWidth = ratio / 2;
+	  ctx.strokeStyle = 'rgba(' + rgb + ', ' + rgb + ', ' + rgb + ', 1';
+	  ctx.moveTo(dot.x, dot.y);
+	  ctx.lineTo(ndot.x, ndot.y);
+	  ctx.stroke();
+	}
+	
+	ndots.splice(ndots.indexOf(dot), 1);
+	});
+	}
+	
+
+	function move(dot) {
+	dot.x += dot.xa;
+	dot.y += dot.ya;
+	
+	dot.xa *= (dot.x > (canvas.width + extendDis) || dot.x < -extendDis) ? -1 : 1;
+	dot.ya *= (dot.y > (canvas.height + extendDis) || dot.y < -extendDis) ? -1 : 1;
+	
+	ctx.fillStyle = 'rgba(' + rgb + ', ' + rgb + ', ' + rgb + ', 1';
+	ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
+	}
+	}();
+	}
+	}catch(e){}
+	</script>
+
+	
+	<script type="text/javascript" src="/js/love.js"></script>
+
+	
+	<div id="landlord" style="left:5px;bottom:0px;">
+	<div class="message" style="opacity:0"></div>
+	<canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+	<div class="live_talk_input_body">
+	<div class="live_talk_input_name_body">
+		<input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+	</div>
+	<div class="live_talk_input_text_body">
+		<input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+	    <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+	</div>
+	</div>
+	<input name="live_talk" id="live_talk" value="1" type="hidden" />
+	<div class="live_ico_box">
+	<div class="live_ico_item type_info" id="showInfoBtn"></div>
+	<div class="live_ico_item type_talk" id="showTalkBtn"></div>
+	<div class="live_ico_item type_music" id="musicButton"></div>
+	<div class="live_ico_item type_youdu" id="youduButton"></div>
+	<div class="live_ico_item type_quit" id="hideButton"></div>
+	<input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+	<audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+	<input name="live2dBGM" value="/live2d/futatabi.flac" type="hidden">
+	<input id="duType" value="douqilai,l2d_caihong" type="hidden">
+	</div>
+	</div>
+	<div id="open_live2d">召唤伊斯特瓦尔</div>
+
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>
+	var message_Path = '/live2d/';
+	var talkAPI = "http://www.tuling123.com/openapi/api";
+	</script>
+	<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+	<script type="text/javascript" src="/live2d/js/message.js"></script>
+	 
+	<style type="text/css"> .live_ico_box { display: none } </style>
+	<script type="text/javascript"> 
+	$(document).ready(function(){ 
+	$("div#landlord").mouseenter(function(){ $("div.live_ico_box").fadeIn(); }); 
+	$("div#landlord").mouseleave(function(){ $("div.live_ico_box").fadeOut(); }); 
+	}); 
+	</script>
+	
+	
+	</main>
+	<footer class="mdl-mini-footer">
+	    <div class="mdl-mini-footer--left-section">                
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="mailto:2291184112@qq.com?subject=Hi">
+                    <i class="material-icons_lg icon ion-email"></i>
+                    <span class="visuallyhidden">Email</span>
+                </a>
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="https://github.com/RobinSea/">
+                    <i class="material-icons_lg icon ion-social-github"></i>
+                    <span class="visuallyhidden">Github</span>
+                </a>
+
+	    </div>
+
+	
+	    <div class="mdl-mini-footer--right-section">
+		<span>© 2018❤RobinSea</span>
+	    </div>
+	</footer>
+	<div class="mdl-layout__obfuscator"></div>
+	</div>
+	<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+	<script src=/js/cardmedia.js></script>
+	<script src=/js/fabbutton.js></script>
+
+
+
+	</body>
+	</html>
+

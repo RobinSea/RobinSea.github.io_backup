@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on RobinSea的博客</title>
+    <link>https://robinsea.github.io/categories/</link>
+    <description>Recent content in Categories on RobinSea的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 17 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://robinsea.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://robinsea.github.io/categories/about/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/categories/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bio</title>
+      <link>https://robinsea.github.io/categories/bio/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/categories/bio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>https://robinsea.github.io/categories/meta/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/categories/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Post</title>
+      <link>https://robinsea.github.io/categories/post/</link>
+      <pubDate>Tue, 11 Dec 2018 19:35:13 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/categories/post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>https://robinsea.github.io/categories/project/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/categories/project/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

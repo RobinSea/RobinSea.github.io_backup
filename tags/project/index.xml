@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on RobinSea的博客</title>
+    <link>https://robinsea.github.io/tags/project/</link>
+    <description>Recent content in Project on RobinSea的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://robinsea.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>音视频截断服务</title>
+      <link>https://robinsea.github.io/project/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%88%AA%E6%96%AD%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/project/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%88%AA%E6%96%AD%E6%9C%8D%E5%8A%A1/</guid>
+      <description> 项目介绍 本项目主要为解决演唱会AI平台网云方对转码能力的需求。
+基本需求如下：
+1. 给定某个stream，实时输出jpg和wav数据
+2. 输出数据频率可控制
+3. 输出jpg、wav和音视频相关信息组成msg发送至kafka
+项目组成 项目组成如下：
+1. api
+服务程序
+2. client
+模拟客户端下发任务
+3. conumer_test
+模拟客户端消费kafka消息
+软件架构 ffmpeg3.3.8+go1.11.2
+使用说明 如下：
+1. 静态编译说明
+编译ffmpeg后要修改ffmpeg编译文件夹内的pkgconfig文件中的pc文件，添加-Wl,-Bstatic和-Wl,-Bdynamic -lc
+即调用ffmpeg接口时强制链接静态库，调用glibc时调用动态库
+2. ffmpeg接口封装包说明
+在包go-libav包的基础上做了改动，修改后的包看glibav
+3. kafka单机测试环境部署
+1）kafka、zookeeper安装
+2）启动服务
+./zkServer.sh start bin/kafka-server-start.sh config/server.properties &amp;amp;  3）使用kafkaTool查看数据获取情况
+4. 部署
+nohup ./restart.sh &amp;amp;  
+5. 升级版本
+1）查看服务进程
+ps -ef|grep restart.sh ps -ef|grep api  2）依次停止脚本和服务进程
+kill -9 pid  3）重启服务
+nohup ./restart.sh &amp;amp;  </description>
+    </item>
+    
+    <item>
+      <title>quc</title>
+      <link>https://robinsea.github.io/project/quc/</link>
+      <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
+      
+      <guid>https://robinsea.github.io/project/quc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>掘锚陀螺自动导向系统</title>
+      <link>https://robinsea.github.io/project/%E6%8E%98%E9%94%9A%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
+      
+      <guid>https://robinsea.github.io/project/%E6%8E%98%E9%94%9A%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/</guid>
+      <description>项目介绍 2016/7―至今
+煤机陀螺自动导向系统
+项目描述：
+用于win10系统，适配与铁建重工新型掘锚机，指导煤机快速掘进。前后有两个版本，参与老项目的维护，更新。新项目的调研、 框架设计、功能模块开发。
+1、第一代产品
+使用VS+qt5.6+qwt+qcustomplot开发，采用无线wifi通讯。主要功能是指导煤机进行方位的调整。
+2、第二代产品
+使用VS+qt5.6+qwt+qcustomplot
+开发，使用串口通信。为煤机提供三角度，机头、机尾偏转，当前里程六个量进行导向。
+责任描述：
+项目总负责人</description>
+    </item>
+    
+    <item>
+      <title>断面仪数据处理平台</title>
+      <link>https://robinsea.github.io/project/%E6%96%AD%E9%9D%A2%E4%BB%AA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
+      
+      <guid>https://robinsea.github.io/project/%E6%96%AD%E9%9D%A2%E4%BB%AA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B9%B3%E5%8F%B0/</guid>
+      <description>2017/10―2017/10
+- 断面仪数据处理平台
+项目描述：
+主要针对windows桌面端，指导盾构机司机拼装管片，提供管片和壳体的上下左右间隙值，以及管片和盾构机壳体实时位置关系云图。涉及 最小二乘法、拟合圆等相关算法。
+责任描述：
+- 项目负责人</description>
+    </item>
+    
+    <item>
+      <title>软件管理平台</title>
+      <link>https://robinsea.github.io/project/%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
+      
+      <guid>https://robinsea.github.io/project/%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/</guid>
+      <description>2018/5―至今
+- 软件管理平台
+项目描述：
+主要针对android客户端开发。开发工具qt5.9.5+qtcreator 。该项目主要为了解决公司软件产品注册、发布、监控、查询等需要。
+责任描述：
+- 项目负责人</description>
+    </item>
+    
+    <item>
+      <title>顶管陀螺自动导向系统</title>
+      <link>https://robinsea.github.io/project/%E9%A1%B6%E7%AE%A1%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
+      
+      <guid>https://robinsea.github.io/project/%E9%A1%B6%E7%AE%A1%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/</guid>
+      <description>2017/5―2017/12
+- 顶管陀螺自动导向系统
+项目描述：
+主要仿照海瑞克盾构机匹配的vmt导向系统进行开发。使用vs2013+qt5.6+qcustomplot 开发，参与项目的调研、设计、开发以及硬件选型工作。使用Axure进行原型设计，软件涉及 航天院光纤陀螺仪、里程计、压力传感器硬件通讯及处理。
+责任描述：
+- 项目负责人</description>
+    </item>
+    
+  </channel>
+</rss>
