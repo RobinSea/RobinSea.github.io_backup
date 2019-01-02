@@ -305,7 +305,7 @@ if(!norunFlag){
 				showMessage(str.text, 0);
 						 
 						}else{
-				showMessage('要加载地址栏提示的脚本哦，以小翅膀担保，我很安全的呢！', 0);
+				showMessage('要加载地址栏提示的脚本的，本网站绝对安全的呢！', 0);
 						    
 						}
 					    }
