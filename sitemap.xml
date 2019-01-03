@@ -88,6 +88,12 @@
   </url>
   
   <url>
+    <loc>https://robinsea.github.io/</loc>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://robinsea.github.io/categories/about/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -149,12 +155,6 @@
   
   <url>
     <loc>https://robinsea.github.io/project/</loc>
-    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://robinsea.github.io/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

@@ -115,7 +115,7 @@ if(!norunFlag){
 			referrer.href = document.referrer;
 			var domain = referrer.hostname.split('.')[1];
 
-			if (referrer.hostname=='robinsea.github.io'){
+			if (referrer.hostname=='robinsea.github.io'||referrer.hostname=='localhost'){
 			text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';				
 			}else{
 			text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';			
@@ -164,10 +164,18 @@ if(!norunFlag){
 	function showHitokoto(){
 		if(sessionStorage.getItem("Sleepy")!=="1"){
 			if(!AITalkFlag){
-				$.getJSON('https://sslapi.hitokoto.cn/',function(result){
-					talkValTimer();
-					showMessage(result.hitokoto, 0);
-				});
+				var talkContent = [];
+				var live2d_weiyu_cache = $('.live2d_weiyu_cache');
+				for(var i=0;i<live2d_weiyu_cache.length;i++){
+					talkContent.push(live2d_weiyu_cache.eq(i).text());
+				}
+				var num = talkNum;
+				showMessage(talkContent[num], 15000);
+				talkNum++;
+				if(talkNum>live2d_weiyu_cache.length){
+					talkNum=0;
+				}
+				talkValTimer();
 			}
 		}else{
 			hideMessage(0);

@@ -1,12 +1,20 @@
 {
     "mouseover": [
-        	{
-            "selector": ".mdl-layout__content a[href^='http']",
-            "text": ["要看看 &lt;span style=\"color:#0099cc;\"&gt;{text}&lt;/span&gt; 么？"]
-        },
 		{
-            "selector": ".hmdl-about",
-            "text": ["要和我聊天吗？"]
+            "selector": ".hmdl-body a[href^='clustrmaps']",
+            "text": ["要看看访客记录么？"]
+        },
+        	{
+            "selector": ".hmdl-body a[href^='/']",
+            "text": ["要看看 <span style='color:#0099cc;'>「 {text} 」</span>么？"]
+        },
+        	{
+            "selector": ".hmdl-body a[href^='http']",
+            "text": ["要看看 <span style='color:#0099cc;'>「 {text} 」</span>么？"]
+        },
+        	{
+            "selector": ".hmdl-body a[href^='mailto']",
+            "text": ["想通过<span style='color:#0099cc;'>「 邮箱 」</span>联系我么？"]
         },
 		{
             "selector": "#showTalkBtn",
