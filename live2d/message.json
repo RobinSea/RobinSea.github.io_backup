@@ -1,9 +1,5 @@
 {
     "mouseover": [
-		{
-            "selector": ".hmdl-body a[href^='clustrmaps']",
-            "text": ["要看看访客记录么？"]
-        },
         	{
             "selector": ".hmdl-body a[href^='/']",
             "text": ["要看看 <span style='color:#0099cc;'>「 {text} 」</span>么？"]
