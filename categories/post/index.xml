@@ -17,22 +17,15 @@
       <pubDate>Tue, 11 Dec 2018 19:35:13 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/golang%E4%BD%BF%E7%94%A8ffmpeg%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/</guid>
-      <description>因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出
-1、静态编译问题
-（1）常规使用
-1）go1.11.2版本之前
-go build -ldflags -extldflags=-static
-2）go1.11.2
-可以直接在声明C或C++代码区域添加-static
-//#cgo CFLAGS: -D_REENTRANT //#cgo LDFLAGS:-static //#cgo pkg-config: libavutil import &amp;quot;C&amp;quot;  （2）go调用ffmpeg
-正常情况以上办法就可以编译生成静态可执行文件，但是go调用ffmpeg时就不行了，因为要用到glibc只能进行动态链接，解决办法是修改ffmpeg编译后生成的pkgconfig中的相关*.pc文件。
--Wl,-Bstatic：ffmpeg接口强制静态链接， -Wl,-Bdynamic -lc :glibc强制动态链接 ，将libav-开头的.pc文件改过就好。
-Conflicts: Libs: -L${libdir} -Wl,-Bstatic -lavutil -lm -Wl,-Bdynamic -lc  注：本人使用过程中发现要先进行动态编译后再进行以上操作才可，原因未明。
-2、找到合适的ffmpeg包
-本人在原先https://github.com/imkira/go-libav包的基础上做了很多改动，不知这个包为什么有那么多star，结果确连example都跑不起来，最后无奈进行了些许改动，例如超时函数的实现，音频数据的处理等。修改后的包看https://github.com/RobinSea/glibav，暂无时间写example，因项目紧任务重，未来得及进行重新架构，本人的项目主要功能是处理各种视频stream生成jpg和wav数据然后发送到kafka，已经上线使用。
-3、项目性能调优
-在实际应用中发现服务性能与完全用C编写性能差距还是很大的，最后使用多个goroutine勉强达到业务需求。以下列举一些性能调优的常用命令：
-1 2 3 4 5 6 7 8 9  1、goTool之pprof的使用 //生成cpu profile go test -run=^$ -bench=. -cpuprofile=profile.out //生成memery profile go test -run=^$ -bench=. -memprofile=profile.out //使用原生pprof启动Web UI pprof -http=:8080 profile.</description>
+      <description>&lt;p&gt;因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出&lt;/p&gt;
+
+&lt;p&gt;1、静态编译问题&lt;/p&gt;
+
+&lt;p&gt;（1）常规使用&lt;/p&gt;
+
+&lt;p&gt;1）go1.11.2版本之前&lt;/p&gt;
+
+&lt;p&gt;go build -ldflags -extldflags=-static&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,24 +34,13 @@ Conflicts: Libs: -L${libdir} -Wl,-Bstatic -lavutil -lm -Wl,-Bdynamic -lc  注：
       <pubDate>Tue, 16 Oct 2018 14:00:34 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/kubenetes1.8.15%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%83%A8%E7%BD%B2/</guid>
-      <description>1、下载服务程序
-下载：https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815
-包名：kubernetes-server-linux-amd64.tar.gz
-将二进制文件拷贝到/usr/bin
-2、配置master上服务
-1）etcd服务
-下载：https://github.com/etcd-io/etcd/releases
-将二进制文件etcd、etcdctl复制到/usr/bin
-设置服务文件sudo vim /usr/lib/dydtemd/system/etcd.service
- [Unit] Description=Etcd Server After=network.target [Service] Type=simple WorkingDirectory=/var/lib/etcd/ #数据保存目录 EnvironmentFile=-/etc/etcd/etcd.conf #配置文件，默认监听https://127.0.0.1:2379 ExecStart=/usr/bin/etcd [Install] WantedBy=multi-user.target  启动etcd服务
-mkdir -p /var/lib/etcd/ 启动之前必须创建
-mkdir -p /etc/etcd/
-systemctl daemon-reload
-systemctl enable etcd.service 开机启动
-systemctl start etcd.service 启动
-etcdctl cluster-health 查看启动是否成功
-//参考
-https://blog.csdn.net/A632189007/article/details/78815807</description>
+      <description>&lt;p&gt;1、下载服务程序&lt;/p&gt;
+
+&lt;p&gt;下载：&lt;a href=&#34;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&#34;&gt;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;包名：&lt;a href=&#34;https://dl.k8s.io/v1.8.15/kubernetes-server-linux-amd64.tar.gz&#34;&gt;kubernetes-server-linux-amd64.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;将二进制文件拷贝到/usr/bin&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -67,20 +49,35 @@ https://blog.csdn.net/A632189007/article/details/78815807</description>
       <pubDate>Fri, 12 Oct 2018 09:17:10 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/terminalvimvscode%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-      <description>1、terminal（终端使用）
-ctrl+alt+t 打开终端
-ctrl+shift+t 打开另一个标签
-ctrl+shift+w 关闭当前标签
-alt+1 alt+2 转换到对应标签
-2、vim使用
-sp filename 将文件在下面打开 不写则打开相同文件
-vsp filename左右打开一页
-ctrl+w 执行两次切换页面
-3、vscode使用
-1、ctrl+函数 实现跳转
-2、ctrl+alt+- 后退
-3、ctrl+shift+- 前进
-4、termianl中code+项目目录 使用vscode打开项目</description>
+      <description>&lt;p&gt;terminal&amp;amp;&amp;amp;vim&amp;amp;&amp;amp;vscode的基本使用&lt;/p&gt;
+
+&lt;p&gt;1、terminal（终端使用）&lt;/p&gt;
+
+&lt;p&gt;ctrl+alt+t 打开终端&lt;/p&gt;
+
+&lt;p&gt;ctrl+shift+t 打开另一个标签&lt;/p&gt;
+
+&lt;p&gt;ctrl+shift+w 关闭当前标签&lt;/p&gt;
+
+&lt;p&gt;alt+1 alt+2 转换到对应标签&lt;/p&gt;
+
+&lt;p&gt;2、vim使用&lt;/p&gt;
+
+&lt;p&gt;sp filename 将文件在下面打开 不写则打开相同文件&lt;/p&gt;
+
+&lt;p&gt;vsp filename左右打开一页&lt;/p&gt;
+
+&lt;p&gt;ctrl+w 执行两次切换页面&lt;/p&gt;
+
+&lt;p&gt;3、vscode使用&lt;/p&gt;
+
+&lt;p&gt;1、ctrl+函数 实现跳转&lt;/p&gt;
+
+&lt;p&gt;2、ctrl+alt+- 后退&lt;/p&gt;
+
+&lt;p&gt;3、ctrl+shift+- 前进&lt;/p&gt;
+
+&lt;p&gt;4、termianl中code+项目目录 使用vscode打开项目&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,18 +86,28 @@ ctrl+w 执行两次切换页面
       <pubDate>Thu, 11 Oct 2018 19:55:32 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/go%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
-      <description>go卸载：apt-get purge golang-go
-1、25关键字或保留字36标识符
-2、程序组成
-关键字、运算符、常量、变量、类型、函数
-sudo vim /etc/profile #设置所有用户环境变量
-vim ~/.bashrc #设置当前用户环境变量(设置root用户)
-PKG_CONFIG_PATH=/home/robin/soft/target/lib/pkgconfig
-项目开发知识了解
-1、TLS与SSL在传输层对网络连接进行加密
-2、toml 处理TOML配置文件
-toml处理：https://github.com/BurntSushi/toml
-教程：https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html</description>
+      <description>&lt;p&gt;go卸载：apt-get purge golang-go&lt;/p&gt;
+
+&lt;p&gt;1、25关键字或保留字36标识符&lt;/p&gt;
+
+&lt;p&gt;2、程序组成&lt;/p&gt;
+
+&lt;p&gt;关键字、运算符、常量、变量、类型、函数&lt;/p&gt;
+
+&lt;p&gt;sudo vim /etc/profile #设置所有用户环境变量
+ vim ~/.bashrc #设置当前用户环境变量(设置root用户)&lt;/p&gt;
+
+&lt;p&gt;PKG_CONFIG_PATH=/home/robin/soft/target/lib/pkgconfig&lt;/p&gt;
+
+&lt;p&gt;项目开发知识了解&lt;/p&gt;
+
+&lt;p&gt;1、TLS与SSL在&lt;a href=&#34;https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536&#34;&gt;传输层&lt;/a&gt;对网络连接进行加密&lt;/p&gt;
+
+&lt;p&gt;2、toml 处理TOML配置文件&lt;/p&gt;
+
+&lt;p&gt;toml处理：&lt;a href=&#34;https://github.com/BurntSushi/toml&#34;&gt;https://github.com/BurntSushi/toml&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;教程：&lt;a href=&#34;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&#34;&gt;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -109,33 +116,20 @@ toml处理：https://github.com/BurntSushi/toml
       <pubDate>Wed, 10 Oct 2018 16:46:28 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%B8%89-%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2k8s%E9%9B%86%E7%BE%A4/</guid>
-      <description>//操作失败，哭&amp;hellip;..
-1、配置k8s的yum阿里云源（在root下进行）
-vim /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=kubernetes
-baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=0
-repo_gpgcheck=0
-gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
-http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-2、关闭防火墙、SeLinux
-systemctl disabled firewalld
-systemctl stop firewalld
-setenforce 0
-3、安装、启动kubelet、kubeadm、kubectl、flannel等工具
-yum install -y kubelet kubeadm kubectl docker kubernetes-cni
-systemctl enable kubelet &amp;amp;&amp;amp; systemctl start kubelet #启动及开机自启动
-systemctl enable docker &amp;amp;&amp;amp; systemctl start docker
-查看版本信息
-cat /etc/centos-release #系统版本（ cat /etc/os-release）
-docker &amp;ndash;version kubectl &amp;ndash;version(k8s版本) etcdctl &amp;ndash;version flanneld &amp;ndash;version
-4、配置镜像加速器（因kubeadm init默认会从gcr.io下载，需翻墙）
-vim /etc/sysconfig/docker
-#修改option,注册daoclod并登陆，点击加速器获取安装方式
-OPTIONS=&amp;lsquo;&amp;ndash;selinux-enabled &amp;ndash;log-driver=journald &amp;ndash;registry-mirror=http://f1361db2.m.daocloud.io&#39;
-docker pull warrior/pause-amd64:3.0 #拉取镜像</description>
+      <description>&lt;p&gt;//操作失败，哭&amp;hellip;..&lt;/p&gt;
+
+&lt;p&gt;1、配置k8s的yum阿里云源（在root下进行）&lt;/p&gt;
+
+&lt;p&gt;vim /etc/yum.repos.d/kubernetes.repo&lt;/p&gt;
+
+&lt;p&gt;[kubernetes]&lt;br /&gt;
+ name=kubernetes&lt;br /&gt;
+ baseurl=&lt;a href=&#34;http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64&#34;&gt;http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64&lt;/a&gt;&lt;br /&gt;
+ enabled=1&lt;br /&gt;
+ gpgcheck=0&lt;br /&gt;
+ repo_gpgcheck=0&lt;br /&gt;
+ gpgkey=&lt;a href=&#34;http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg&#34;&gt;http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&#34;http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg&#34;&gt;http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -144,26 +138,19 @@ docker pull warrior/pause-amd64:3.0 #拉取镜像</description>
       <pubDate>Wed, 10 Oct 2018 16:46:04 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E4%B8%80/</guid>
-      <description>参考：https://blog.csdn.net/chanmufeng/article/details/80459607
-1、生成执行程序 根据基础镜像，运行容器安装程序
-2、镜像操作 制作镜像
-docker images #查看本地镜像
-docker container ls 或docker ps #查看本地容器，ls -a可查看隐藏内容
-1）用别人的镜像制作
-docker search  #搜索网上可用镜像
-docker pull  #下载到本地
-docker run -it  #根据镜像名运行容器，安装组件
-docker commit  用户/项目 #提交生成新的镜像，或修改tag生成新镜像
-docker inspect  #查看容器完整信息
-2）通过dokerfile文件制作
-参考：https://blog.csdn.net/wo18237095579/article/details/80540571
-FROM指定基础镜像 常用** **buntu\debian\centos scratch为空白镜像
-RUN执行命令 注意dockerfile每一条命令会建立一层layer，多条RUN命令要用换行（\）,与（&amp;amp;&amp;amp;）进行拼接（COPY,ADD除外），每一个 RUN 都是启动一个容器、执行命令、然后提交存储层文件变更
-COPY复制文件
-ADD高级复制命令（包含解压功能）
-CMD容器启动命令 Docker 不是虚拟机，容器就是进程，CMD 指令就是用于指定默认的容器主进程的启动命令的
-ENTRYPOINT 入口点，比CMD多了参数
-ENV 设置环境变量，后面ADD 、 COPY 、 ENV 、 EXPOSE 、 LABEL 、 USER 、 WORKDIR 、 VOLUME 、 STOPSIGNAL 、 ONBUILD均可使用</description>
+      <description>&lt;p&gt;参考：&lt;a href=&#34;https://blog.csdn.net/chanmufeng/article/details/80459607&#34;&gt;https://blog.csdn.net/chanmufeng/article/details/80459607&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;1-生成执行程序&#34;&gt;1、生成执行程序&lt;/h5&gt;
+
+&lt;p&gt;根据基础镜像，运行容器安装程序&lt;/p&gt;
+
+&lt;h5 id=&#34;2-镜像操作&#34;&gt;2、镜像操作&lt;/h5&gt;
+
+&lt;p&gt;制作镜像&lt;/p&gt;
+
+&lt;p&gt;docker images #查看本地镜像&lt;/p&gt;
+
+&lt;p&gt;docker container ls 或docker ps #查看本地容器，ls -a可查看隐藏内容&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -172,24 +159,17 @@ ENV 设置环境变量，后面ADD 、 COPY 、 ENV 、 EXPOSE 、 LABEL 、 USE
       <pubDate>Tue, 09 Oct 2018 16:54:49 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%BA%8C-k8s%E4%B9%8Bkubectl%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</guid>
-      <description>1、创建资源对象
-kubectl create -f 1.yaml -f 2.yaml #一次性创建service、rc等资源
-kubectl create -f  #创建目录下所有.yaml、.yml、.json文件
-2、查看资源对象
-kubectl get pods #查看pod列表
-kubectl get rc,service #查看rc、service列表
-3、描述资源对象
-kubectl describe nodes  #显示Node详细
-kubectl describe pods /  #显示Pod详细
-kubectl describe pods  #显示RC管理的Pod详细
-4、删除资源对象
-kubectl delete -f pod.yaml #删除基于pod.yaml定义名称的Pod
-kubectl delete pods,services -l name= #删除某个label对应的Pod和service
-kubectl delete pods &amp;ndash;all #删除所有Pod
-5、执行容器的命令
-kubectl exec  date #执行Pod的date命令，默认使用第一个容器
-kubectl exec  -c  date #执行Pod中某个容器的date命令
-kubectl exec -ti  -c  /bin/bash #通过bash获取Pod中某个容器的TTY</description>
+      <description>&lt;p&gt;&lt;strong&gt;1、创建资源对象&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;kubectl create -f 1.yaml -f 2.yaml #一次性创建service、rc等资源&lt;/p&gt;
+
+&lt;p&gt;kubectl create -f &lt;directory&gt; #创建目录下所有.yaml、.yml、.json文件&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2、查看资源对象&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;kubectl get pods #查看pod列表&lt;/p&gt;
+
+&lt;p&gt;kubectl get rc,service #查看rc、service列表&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -198,27 +178,19 @@ kubectl exec -ti  -c  /bin/bash #通过bash获取Pod中某个容器的TTY</descr
       <pubDate>Tue, 09 Oct 2018 16:21:17 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%B8%80/</guid>
-      <description>k8s是什么:Docker分布式系统解决方案
-单机版k8s环境搭建：centos7
-systemctl disabled firewalld
-systemctl stop firewalld
-安装etcd（高可用键值数据库）和k8s
-yum update #多次尝试，确认网络连接
-yum install -y etcd kubernetes
-启动服务（进程）
-systemctl start etcd
-systemctl start docker #容器创建管理
-systemctl start kube-apiserver #所有资源增、删、改、查等操作入口
-systemctl start kube-controller-manager #自动化控制中心
-systemctl start kube-scheduler #pod调度
-systemctl start kubelet #node节点进程，负责pod对应容器创建、起停
-sustemctl start kube-proxy #service通信及负载均衡机制组件
-常用操作命令
-kubectl get nodes #查看集群中node个数
-kubectl descripe node  #查看详细信息
-kubectl create -f *.yaml #创建yaml对应资源文件（即kind对象）
-kubectl get 对象名称 #查看对象信息
-kubectl get svc service_name -o yaml #查看service ClusterIP</description>
+      <description>&lt;p&gt;&lt;strong&gt;k8s是什么:&lt;/strong&gt;Docker分布式系统解决方案&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;单机版k8s环境搭建：&lt;/strong&gt;centos7&lt;/p&gt;
+
+&lt;p&gt;systemctl disabled firewalld&lt;/p&gt;
+
+&lt;p&gt;systemctl stop firewalld&lt;/p&gt;
+
+&lt;p&gt;安装etcd（高可用键值数据库）和k8s&lt;/p&gt;
+
+&lt;p&gt;yum update #多次尝试，确认网络连接&lt;/p&gt;
+
+&lt;p&gt;yum install -y etcd kubernetes&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -227,42 +199,11 @@ kubectl get svc service_name -o yaml #查看service ClusterIP</description>
       <pubDate>Tue, 09 Oct 2018 13:35:18 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/godockerkubernetesk8sgit-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
-      <description>学习资料
-go知识图谱：https://www.processon.com/view/link/5a9ba4c8e4b0a9d22eb3bdf0
-go入门指南、go语言圣经、go Web编程：https://go.wuhaolin.cn/gopl/ch1/ch1-07.html
-go下载：https://golang.google.cn/dl/
-ubuntu go及VSCODE环境搭建：https://blog.csdn.net/yk150915/article/details/80020413（注意项目要放在$GOPATH）
-docker入门教程：http://www.docker.org.cn/book/docker/docker-install-package-9.html
-docker官方教程:
-https://docs.docker-cn.com/get-started/part2/#%E4%BD%BF%E7%94%A8-dockerfile-%E5%AE%9A%E4%B9%89%E5%AE%B9%E5%99%A8
-docker操作命令集合：https://blog.csphere.cn/archives/22
-镜像集合：https://hub.docker.com/explore/?page=1
-k8s基本概念：https://blog.csdn.net/TM6zNf87MDG7Bo/article/details/79621510
-k8s视频教程及学习资料：
-网盘：https://pan.baidu.com/s/1UhTATAMi_71nyypbndIu8w
-密码：yhwu
-git关联github和gitee
-https://blog.csdn.net/Smallboy/article/details/81588283
-https://blog.csdn.net/weixin_36191602/article/details/80946242
-git关联gitee
-git常用操作
-//初始化
-git config &amp;ndash;global user.name yourname # &amp;ldquo;你的名字或昵称&amp;rdquo;
-git config &amp;ndash;global user.email youremail@xxx.com # &amp;ldquo;你的邮箱&amp;rdquo;
-//关联本地和云端Gitee仓库
-git remote add origin https://gitee.com/YourGiteeName/YourProjName.git
-//对比查看云端本地项目版本
-git remote -v
-//克隆项目到本地
-git clone &amp;lt;项目地址&amp;gt;
-//同步(拉取)
-git pull origin master
-master是分支名，如果你本地是其他分支，请换成其他分支的名字
-# 加入到暂存区
-git add
--A # 文件的修改，删除，新建添加到暂存区。(git add -A)
-git commit # 提交到本地库
--m &amp;ldquo;说明&amp;rdquo;#-m后面的是本次提交的说明（git commit -m &amp;ldquo;第一次提交&amp;rdquo;）</description>
+      <description>&lt;p&gt;&lt;strong&gt;学习资料&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;go知识图谱：&lt;a href=&#34;https://www.processon.com/view/link/5a9ba4c8e4b0a9d22eb3bdf0&#34;&gt;https://www.processon.com/view/link/5a9ba4c8e4b0a9d22eb3bdf0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;go入门指南、go语言圣经、go Web编程：&lt;a href=&#34;https://go.wuhaolin.cn/gopl/ch1/ch1-07.html&#34;&gt;https://go.wuhaolin.cn/gopl/ch1/ch1-07.html&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

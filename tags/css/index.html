@@ -65,7 +65,7 @@
 
 
 
-    <title>&lt;安&gt;的博客</title>
+    <title>Css</title>
 </head>
 
 <body style="background-image: url('/images/background.jpg'); "  onload="getYiYan()">
@@ -74,7 +74,7 @@
             <div class="mdl-layout__header-row">
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                <a class="mdl-navigation__link mdl-color-text--accent" href="/">主页</a>
+                <a class="mdl-navigation__link" href="/">主页</a>
                 <a class="mdl-navigation__link" href="/post/">文章</a>
                 <a class="mdl-navigation__link" href="/project/">项目</a>
                 <a class="mdl-navigation__link" href="/about/">关于</a>
@@ -84,7 +84,7 @@
         </header>
         <div class="mdl-layout__drawer">
             <nav class="mdl-navigation">
-            <a class="mdl-navigation__link mdl-color-text--accent" href="/">主页</a>
+            <a class="mdl-navigation__link" href="/">主页</a>
             <a class="mdl-navigation__link" href="/post/">文章</a>
             <a class="mdl-navigation__link" href="/project/">项目</a>
             <a class="mdl-navigation__link" href="/about/">关于</a>
@@ -127,274 +127,26 @@
 
 
 
-            <div class="hmdl-frontpage mdl-grid">                
-                <div class="hmdl-profile-card mdl-card profile-card mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-                    <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600" style="background-image: url('/images/avatar-192x210.png');">
+            <div class="hmdl-list mdl-grid">
+                <div class="mdl-card mdl-shadow--4dp mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                        <h3>Css</h3>
                     </div>                    
-                    <div id="fab_ctn" class="mdl-button--fab_flinger-container">
 
-                        <button id="fab_btn" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
-                            <i class="icon ion-android-add mdl-color-text--white" role="presentation"></i>
-                            <span class="visuallyhidden">add</span>
-                        </button>
-
-                        <div class="mdl-button--fab_flinger-options">
-                            <a href=/about>
-                                <button id="about" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--primary" title="关于我">
-                                    <i class="icon ion-person mdl-color-text--white" role="presentation"></i>
-                                </button>
-                            </a>
-
-                            <a href=/project>
-                                <button id="projects" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--primary" title="我的项目">
-                                    <i class="icon ion-code mdl-color-text--white" role="presentation"></i>
-                                </button>
-                            </a>
-
-                            <a href="mailto:2291184112@qq.com?subject=Hi">
-                                <button id="email" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--primary" title="跟我联系">
-                                    <i class="icon ion-email mdl-color-text--white" role="presentation"></i>
-                                </button>
-                            </a>
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
+                            <div>
+                                <strong><a href="">刘典武</a></strong>
+                                <span>2018年12月18日</span>
+                            </div>
+                            <a href="/project/quc/"><h5 class="mdl-color-text--grey-600">Quc</h5></a>
                         </div>
-                    </div>
+                    </div>                    
 
-                    <div class="hmdl-page-meta mdl-card__supporting-text meta--fill mdl-color-text--grey-600 ">
-                        <div>
-                            <strong>RobinSea</strong>
-                        </div>
-                    </div>
                 </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--8-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/golang%E4%BD%BF%E7%94%A8ffmpeg%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/" >Golang使用ffmpeg的那些坑</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                      
-  <div class="summary">
-    <p>因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出</p>
-
-<p>1、静态编译问题</p>
-
-<p>（1）常规使用</p>
-
-<p>1）go1.11.2版本之前</p>
-
-<p>go build -ldflags -extldflags=-static</p>
-  </div>
-  
-  
-
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年12月11日</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/kubenetes1.8.15%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%83%A8%E7%BD%B2/" >Kubenetes1.8.15二进制文件部署</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        <p>1、下载服务程序</p>
-
-<p>下载：<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815">https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815</a></p>
-
-<p>包名：<a href="https://dl.k8s.io/v1.8.15/kubernetes-server-linux-amd64.tar.gz">kubernetes-server-linux-amd64.tar.gz</a></p>
-
-<p>将二进制文件拷贝到/usr/bin</p>
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年10月16日</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/terminalvimvscode%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" >Terminal&amp;&amp;vim&amp;&amp;vscode的基本使用</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        <p>terminal&amp;&amp;vim&amp;&amp;vscode的基本使用</p>
-
-<p>1、terminal（终端使用）</p>
-
-<p>ctrl+alt+t 打开终端</p>
-
-<p>ctrl+shift+t 打开另一个标签</p>
-
-<p>ctrl+shift+w 关闭当前标签</p>
-
-<p>alt+1 alt+2 转换到对应标签</p>
-
-<p>2、vim使用</p>
-
-<p>sp filename 将文件在下面打开 不写则打开相同文件</p>
-
-<p>vsp filename左右打开一页</p>
-
-<p>ctrl+w 执行两次切换页面</p>
-
-<p>3、vscode使用</p>
-
-<p>1、ctrl+函数 实现跳转</p>
-
-<p>2、ctrl+alt+- 后退</p>
-
-<p>3、ctrl+shift+- 前进</p>
-
-<p>4、termianl中code+项目目录 使用vscode打开项目</p>
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年10月12日</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/go%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" >Go学习总结</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        <p>go卸载：apt-get purge golang-go</p>
-
-<p>1、25关键字或保留字36标识符</p>
-
-<p>2、程序组成</p>
-
-<p>关键字、运算符、常量、变量、类型、函数</p>
-
-<p>sudo vim /etc/profile #设置所有用户环境变量
- vim ~/.bashrc #设置当前用户环境变量(设置root用户)</p>
-
-<p>PKG_CONFIG_PATH=/home/robin/soft/target/lib/pkgconfig</p>
-
-<p>项目开发知识了解</p>
-
-<p>1、TLS与SSL在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密</p>
-
-<p>2、toml 处理TOML配置文件</p>
-
-<p>toml处理：<a href="https://github.com/BurntSushi/toml">https://github.com/BurntSushi/toml</a></p>
-
-<p>教程：<a href="https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html">https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html</a></p>
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年10月11日</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%B8%89-%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2k8s%E9%9B%86%E7%BE%A4/" >K8s关键知识点汇总（三）----快速部署k8s集群</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        <p>//操作失败，哭&hellip;..</p>
-
-<p>1、配置k8s的yum阿里云源（在root下进行）</p>
-
-<p>vim /etc/yum.repos.d/kubernetes.repo</p>
-
-<p>[kubernetes]<br />
- name=kubernetes<br />
- baseurl=<a href="http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64">http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64</a><br />
- enabled=1<br />
- gpgcheck=0<br />
- repo_gpgcheck=0<br />
- gpgkey=<a href="http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg">http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg</a><br />
- <a href="http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg">http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</a></p>
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年10月10日</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E4%B8%80/" >镜像制作（一）</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        <p>参考：<a href="https://blog.csdn.net/chanmufeng/article/details/80459607">https://blog.csdn.net/chanmufeng/article/details/80459607</a></p>
-
-<h5 id="1-生成执行程序">1、生成执行程序</h5>
-
-<p>根据基础镜像，运行容器安装程序</p>
-
-<h5 id="2-镜像操作">2、镜像操作</h5>
-
-<p>制作镜像</p>
-
-<p>docker images #查看本地镜像</p>
-
-<p>docker container ls 或docker ps #查看本地容器，ls -a可查看隐藏内容</p>
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年10月10日</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#268368;">
-                        <h3><a href="/post/k8s%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB%E4%BA%8C-k8s%E4%B9%8Bkubectl%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" >K8s关键知识点汇总（二）----K8s之kubectl操作命令</a></h3>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        <p><strong>1、创建资源对象</strong></p>
-
-<p>kubectl create -f 1.yaml -f 2.yaml #一次性创建service、rc等资源</p>
-
-<p>kubectl create -f <directory> #创建目录下所有.yaml、.yml、.json文件</p>
-
-<p><strong>2、查看资源对象</strong></p>
-
-<p>kubectl get pods #查看pod列表</p>
-
-<p>kubectl get rc,service #查看rc、service列表</p>
-                    </div>
-                    <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
-                        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-                        <div>
-                            <strong><a href="">RobinSea</a></strong>
-                            <span>2018年10月09日</span>
-                        </div>
-                    </div>
-                </div>
-
-    
-                
-                <nav class="mdl-cell mdl-cell--12-col">
-                    <div class="section-spacer"></div>
-                    <a href=/post/ title="显示更多">
-                        显示更多
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                            <i class="material-icons icon ion-android-arrow-forward" role="presentation"></i>
-                        </button>
-                    </a>
-                </nav>
-
-            </div>	
+            </div>
+            	
 
 	<script type="text/javascript">
 	try{

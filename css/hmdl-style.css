@@ -27,8 +27,12 @@ position:relative;
 .mdl-card>a{color:inherit;text-decoration:none;font-weight:inherit}
 .hmdl-body .mdl-card h3{margin:0}
 .hmdl-body .mdl-card h3.quote:after,.hmdl-body .mdl-card h3.quote:before{display:block;font-size:3em;margin-top:0.5em}.hmdl-body .mdl-card h3.quote:after{content:'”'}.hmdl-body .mdl-card h3.quote:before{content:'“'}
-.hmdl-body .mdl-card h3 a{text-decoration:none}.hmdl-body .mdl-card .meta.meta--fill{justify-content:space-between}.hmdl-body .mdl-card__actions{display:flex;box-sizing:border-box;align-items:center;justify-content:space-between}.hmdl-body .mdl-card__actions:first-child{margin-left:0}.hmdl-body .mdl-card__media{box-sizing:border-box;background-size:cover;padding:24px;display:flex;flex-grow:1;flex-direction:row;align-items:flex-end;cursor:pointer}.hmdl-body .mdl-card__media ~ .mdl-card__supporting-text{min-height:64px}
-.hmdl-body .mdl-card__media a{color:inherit}.hmdl-body .mdl-card__title{padding:16px;flex-grow:1}.hmdl-body .mdl-card__title a{color:inherit}
+.hmdl-body .mdl-card h3 a{text-decoration:none}.hmdl-body .mdl-card .meta.meta--fill{justify-content:space-between}.hmdl-body .mdl-card__actions{display:flex;box-sizing:border-box;align-items:center;justify-content:space-between}.hmdl-body .mdl-card__actions:first-child{margin-left:0}.hmdl-body 
+.mdl-card__media{box-sizing:border-box;background-size:cover;padding:24px;display:flex;flex-grow:1;flex-direction:row;align-items:flex-end;cursor:pointer}.hmdl-body 
+.mdl-card__media ~ .mdl-card__supporting-text{min-height:20px}
+.hmdl-body 
+.mdl-card__media a{color:inherit}.hmdl-body .mdl-card__title{padding:16px;flex-grow:1}
+.hmdl-body .mdl-card__title a{color:inherit}
 /*左上角弹性盒子颜色*/
 .hmdl-body .mdl-layout__header,.hmdl-body 
 .mdl-layout__drawer-button,.hmdl-body .mdl-layout__header--transparent 
