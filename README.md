@@ -20,5 +20,10 @@ https://mx-model.ga/
 - 3、对标签进行云图显示<br>
 - 4、根据标签索引文章<br>
 - 5、制作网站logo<br>
-- 6、图片双击放大
+- 6、[图片双击放大](https://www.cnblogs.com/xuyuntao/p/4965818.html)
+- 7、左边抽屉不可拖动
+
+- 8、添加https://twitter.com/
+- 9、搜索功能
+- 10、高亮代码可复制
 
