@@ -36,7 +36,7 @@
       <guid>https://robinsea.github.io/post/kubenetes1.8.15%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%83%A8%E7%BD%B2/</guid>
       <description>&lt;p&gt;1、下载服务程序&lt;/p&gt;
 
-&lt;p&gt;下载：&lt;a href=&#34;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&#34;&gt;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载：&lt;a href=&#34;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&#34;&gt;CHANGELOG-1.8&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;包名：&lt;a href=&#34;https://dl.k8s.io/v1.8.15/kubernetes-server-linux-amd64.tar.gz&#34;&gt;kubernetes-server-linux-amd64.tar.gz&lt;/a&gt;&lt;/p&gt;
 
@@ -105,9 +105,9 @@
 
 &lt;p&gt;2、toml 处理TOML配置文件&lt;/p&gt;
 
-&lt;p&gt;toml处理：&lt;a href=&#34;https://github.com/BurntSushi/toml&#34;&gt;https://github.com/BurntSushi/toml&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;toml处理：&lt;a href=&#34;https://github.com/BurntSushi/toml&#34;&gt;toml&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;教程：&lt;a href=&#34;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&#34;&gt;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;教程：&lt;a href=&#34;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&#34;&gt;cnblogs&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

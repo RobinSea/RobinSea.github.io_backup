@@ -17,7 +17,7 @@
       <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
       
       <guid>https://robinsea.github.io/project/%E6%8E%98%E9%94%9A%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/</guid>
-      <description>项目介绍 2016/7―至今
+      <description> 项目介绍 2016/7―至今
 煤机陀螺自动导向系统
 项目描述：
 用于win10系统，适配与铁建重工新型掘锚机，指导煤机快速掘进。前后有两个版本，参与老项目的维护，更新。新项目的调研、 框架设计、功能模块开发。
@@ -27,7 +27,8 @@
 使用VS+qt5.6+qwt+qcustomplot
 开发，使用串口通信。为煤机提供三角度，机头、机尾偏转，当前里程六个量进行导向。
 责任描述：
-项目总负责人</description>
+项目总负责人
+项目展示   图1 老版主界面 图2 老版设置界面  图3 老版数据配置界面   图4 新版主界面1  图5 新版主界面2  图6 系统设置    图7 工程设置  图8 数据查询    </description>
     </item>
     
     <item>
@@ -41,7 +42,8 @@
 项目描述：
 主要针对windows桌面端，指导盾构机司机拼装管片，提供管片和壳体的上下左右间隙值，以及管片和盾构机壳体实时位置关系云图。涉及 最小二乘法、拟合圆等相关算法。
 责任描述：
-- 项目负责人</description>
+- 项目负责人
+  图1 主界面 图2 二级界面    </description>
     </item>
     
     <item>
@@ -55,7 +57,8 @@
 项目描述：
 主要针对android客户端开发。开发工具qt5.9.5+qtcreator 。该项目主要为了解决公司软件产品注册、发布、监控、查询等需要。
 责任描述：
-- 项目负责人</description>
+- 项目负责人
+  图1 主界面 图2 日历  图3 新版注册机   图4 老版本注册机    </description>
     </item>
     
     <item>
@@ -64,12 +67,11 @@
       <pubDate>Tue, 18 Dec 2018 19:19:29 +0800</pubDate>
       
       <guid>https://robinsea.github.io/project/%E9%A1%B6%E7%AE%A1%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/</guid>
-      <description>2017/5―2017/12
+      <description> 2017/5―2017/12
 - 顶管陀螺自动导向系统
-项目描述：
-主要仿照海瑞克盾构机匹配的vmt导向系统进行开发。使用vs2013+qt5.6+qcustomplot 开发，参与项目的调研、设计、开发以及硬件选型工作。使用Axure进行原型设计，软件涉及 航天院光纤陀螺仪、里程计、压力传感器硬件通讯及处理。
-责任描述：
-- 项目负责人</description>
+项目描述 主要仿照海瑞克盾构机匹配的vmt导向系统进行开发。使用vs2013+qt5.6+qcustomplot 开发，参与项目的调研、设计、开发以及硬件选型工作。使用Axure进行原型设计，软件涉及 航天院光纤陀螺仪、里程计、压力传感器硬件通讯及处理。 责任描述：
+- 项目负责人
+项目展示   图1 一级界面 图2 一级界面  图2 一级界面    图1 一级界面 图2 二级界面  图2 三级界面    图1 三级界面 图2 三级界面  图2 二级界面    </description>
     </item>
     
     <item>
@@ -97,7 +99,7 @@
       <guid>https://robinsea.github.io/post/kubenetes1.8.15%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%83%A8%E7%BD%B2/</guid>
       <description>&lt;p&gt;1、下载服务程序&lt;/p&gt;
 
-&lt;p&gt;下载：&lt;a href=&#34;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&#34;&gt;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载：&lt;a href=&#34;https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815&#34;&gt;CHANGELOG-1.8&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;包名：&lt;a href=&#34;https://dl.k8s.io/v1.8.15/kubernetes-server-linux-amd64.tar.gz&#34;&gt;kubernetes-server-linux-amd64.tar.gz&lt;/a&gt;&lt;/p&gt;
 
@@ -166,9 +168,9 @@
 
 &lt;p&gt;2、toml 处理TOML配置文件&lt;/p&gt;
 
-&lt;p&gt;toml处理：&lt;a href=&#34;https://github.com/BurntSushi/toml&#34;&gt;https://github.com/BurntSushi/toml&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;toml处理：&lt;a href=&#34;https://github.com/BurntSushi/toml&#34;&gt;toml&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;教程：&lt;a href=&#34;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&#34;&gt;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;教程：&lt;a href=&#34;https://www.cnblogs.com/CraryPrimitiveMan/p/7928647.html&#34;&gt;cnblogs&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
