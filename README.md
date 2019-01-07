@@ -7,8 +7,10 @@ live2d看板娘：[伊斯特瓦尔](https://github.com/eeg1412/Live2dHistoire)<b
 代码高亮：[github样式](https://tonybai.com/2015/09/23/intro-of-gohugo/)
 #### 参考网站：
 http://wweir.cc/<br>
+https://tonychenn.cn/<br>
 https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02<br>
 http://n1.likeqi.cn:90/<br>
+https://2heng.xin/theme-sakura/<br>
 https://haremu.com/about/
 #### 模型库：
 https://mx-model.ga/
@@ -26,4 +28,7 @@ https://mx-model.ga/
 - 8、添加https://twitter.com/
 - 9、搜索功能
 - 10、高亮代码可复制
+
+- 11、网页名称加|
+- 12、图片可点击
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>&lt;安&gt;的博客</title>
+    <title>梧桐树下的🐻</title>
     <link>https://robinsea.github.io/</link>
-    <description>Recent content on &lt;安&gt;的博客</description>
+    <description>Recent content on 梧桐树下的🐻</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
@@ -76,7 +76,7 @@ nohup ./restart.sh &amp;amp;  </description>
 开发，使用串口通信。为煤机提供三角度，机头、机尾偏转，当前里程六个量进行导向。
 责任描述：
 项目总负责人
-项目展示  图1 老版主界面 图2 老版设置界面  图3 老版数据配置界面   图4 新版主界面1  图5 新版主界面2  图6 系统设置    图7 工程设置  图8 数据查询    </description>
+项目展示   图1 老版主界面  图2 老版设置界面  图3 老版数据配置界面    图4 新版主界面1   图5 新版主界面2   图6 系统设置     图7 工程设置   图8 数据查询    </description>
     </item>
     
     <item>

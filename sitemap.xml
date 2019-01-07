@@ -88,12 +88,6 @@
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/</loc>
-    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://robinsea.github.io/categories/about/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -186,6 +180,12 @@
   <url>
     <loc>https://robinsea.github.io/tags/%E6%A0%B7%E5%BC%8F%E8%A1%A8/</loc>
     <lastmod>2018-12-18T19:19:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://robinsea.github.io/</loc>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
