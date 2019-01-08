@@ -70,10 +70,20 @@
 }
 </style>
 
+
 <link href="/css/lightbox.min.css" rel="stylesheet">
 
 
 <script type="text/javascript" src="/js/lightbox-plus-jquery.min.js"></script>
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'alwaysShowNavOnTouchDevices':true,
+      'albumLabel':"🌳第%1项|共%2项🌳",
+      'positionFromTop':100
+    })
+</script>
 
   <canvas id="cas"></canvas> 
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -125,20 +135,20 @@
  
 	<font color="#f2eada" size="3">	
 	<center><b>
-	<div id="hitokoto">获取中...</div>
+	<div id="hitokoto">🌳获取中...🌳</div>
 	</b></center>
   	<div id="from" align="right"></div>
 
 
 <script>
   function show(){
-    fetch('https://v1.hitokoto.cn')
+    fetch('https://v1.hitokoto.cn/?c=d')
     .then(function (res){
       return res.json();
     })
     .then(function (data) {
       var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText = data.hitokoto; 
+      hitokoto.innerText = '🌳'+data.hitokoto+'🌳'; 
       var from=document.getElementById('from');
       from.innerText='----出自：《'+data.from+'》';
     })
