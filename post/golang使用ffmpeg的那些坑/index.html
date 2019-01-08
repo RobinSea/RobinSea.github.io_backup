@@ -94,11 +94,12 @@
     <link rel="stylesheet" href="https://robinsea.github.io/css/hmdl-style.css"/>
     
    <link rel="stylesheet" href="/live2d/css/live2d.css" />
+    
+    <link href="/css/monokai-sublime.css" rel="stylesheet">  
 
- 
-   <link href="/css/github.min.css" rel="stylesheet">  
-    <script src="/js/highlight.min.js"></script> 
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/highlight.pack.js"></script> 
+    <script src="/js/common.js"></script>
+    <script >hljs.initHighlightingOnLoad();</script>
 
 
 
@@ -109,8 +110,8 @@
 
 <body style="background-image: url('/images/background.jpg'); "  onload="getYiYan()">
     <div class="hmdl-body mdl-layout mdl-js-layout has-drawer is-upgraded">        
-        <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
-            <div class="mdl-layout__header-row">
+        <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll" >
+            <div class="mdl-layout__header-row" >
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="/">主页</a>
@@ -121,13 +122,34 @@
                 </nav>
             </div>
         </header>
-        <div class="mdl-layout__drawer">
+        <div class="mdl-layout__drawer" style="background-color:#f2eada">
+            <span class="mdl-layout-title">🌳梧桐落🌳</span>
             <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="/">主页</a>
             <a class="mdl-navigation__link" href="/post/">文章</a>
             <a class="mdl-navigation__link" href="/project/">项目</a>
             <a class="mdl-navigation__link" href="/about/">关于</a>
             <a class="mdl-navigation__link" href="/disclaimer/">声明</a>
+<font color="#ffc20e">
+<center>
+<h6>博客访问统计</h6>
+<p>
+	
+	<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffc20e&w=a&t=n&d=cbRUP_Et5GOe6tDRn48ZrmJ-wxFD9VgU9LYfEAHr0s0&co=f2eada'></script>
+
+	
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+	<center>
+	<span id="busuanzi_container_site_uv">
+	   访客数<span id="busuanzi_value_site_uv"></span>人
+	<span id="busuanzi_container_site_pv">| 访问量<span id="busuanzi_value_site_pv"></span>次
+
+</p>
+	</span></span>
+	</center>
+	</font> 
+
             </nav>
         </div>
 
@@ -223,31 +245,18 @@ Libs: -L${libdir} -Wl,-Bstatic -lavutil -lm -Wl,-Bdynamic -lc
 
 <p>在实际应用中发现服务性能与完全用C编写性能差距还是很大的，最后使用多个goroutine勉强达到业务需求。以下列举一些性能调优的常用命令：</p>
 
-<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">goTool之pprof的使用</span>
-<span style="color:#75715e">//生成cpu profile
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">run</span>=^<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">bench</span>=. <span style="color:#f92672">-</span><span style="color:#a6e22e">cpuprofile</span>=<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">out</span>
-<span style="color:#75715e">//生成memery profile
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">run</span>=^<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">bench</span>=. <span style="color:#f92672">-</span><span style="color:#a6e22e">memprofile</span>=<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">out</span>
-<span style="color:#75715e">//使用原生pprof启动Web UI
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">pprof</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">http</span>=:<span style="color:#ae81ff">8080</span> <span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">out</span>
-<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">代码优化</span><span style="color:#f92672">--</span><span style="color:#a6e22e">goreporter</span>
-<span style="color:#a6e22e">goreporter</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> [<span style="color:#a6e22e">projectRelativePath</span>] <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> [<span style="color:#a6e22e">reportPath</span>] <span style="color:#f92672">-</span><span style="color:#a6e22e">e</span> [<span style="color:#a6e22e">exceptPackagesName</span>] <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> [<span style="color:#a6e22e">json</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">text</span>] {<span style="color:#f92672">-</span><span style="color:#a6e22e">t</span> <span style="color:#a6e22e">templatePathIfHtml</span>}</code></pre></td></tr></table>
-</div>
-</div>
- 后续再将项目具体细节一一剖析。</p>
+<pre><code class="language-bash">1、goTool之pprof的使用
+//生成cpu profile
+go test -run=^$ -bench=. -cpuprofile=profile.out
+//生成memery profile
+go test -run=^$ -bench=. -memprofile=profile.out
+//使用原生pprof启动Web UI
+pprof -http=:8080 profile.out
+2、代码优化--goreporter
+goreporter -p [projectRelativePath] -r [reportPath] -e [exceptPackagesName] -f [json / html / text] {-t templatePathIfHtml}
+</code></pre>
+
+<p>后续再将项目具体细节一一剖析。</p>
                     </div>
                     <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
                         <a href=>RobinSea</a>

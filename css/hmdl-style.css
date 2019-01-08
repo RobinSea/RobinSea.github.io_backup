@@ -1,3 +1,4 @@
+/*about页头设计*/
 .hmdl-about #hmdl-about-media{flex-direction:row;align-items:flex-end;justify-content:center;padding:0px}
 .hmdl-about #hmdl-about-text{display:flex;flex-direction:column;box-sizing:border-box;padding-top:110px}
 .hmdl-about #hmdl-about-text>h3,.hmdl-about #hmdl-about-text>h6{margin:auto}.hmdl-about 
@@ -6,10 +7,11 @@
 
 .profilepic{width:150px;height:150px;background-position:50% calc(50% + 10px);background-repeat:no-repeat;background-size:95%;border-radius:50%;background-color:#ffffff;border-style:solid;border-color:#789296;border-width:3px}
 /*设置背景填充*/
-body{background-size:cover;font-family:'Roboto', 'Helvetica', sans-serif}
+body{background-size:cover;}
 body:before{background-size:cover;background-attachment:fixed;content:'';will-change:transform;z-index:-1;left:0;right:0;bottom:0;top:0;position:fixed}
 
 main{max-width:900px;display:flex;width:100%;margin:0 auto;
+
 /*设置左上角弹性盒子是否跟滚*/
 flex-shrink:0;
 justify-content:center;
@@ -22,16 +24,26 @@ position:relative;
 .mdl-card__supporting-text ~ 
 .mdl-card__supporting-text{border-top:1px solid rgba(0,0,0,0.1)}
 .hmdl-body 
-.icon-button{min-width:32px}.hmdl-body .material-icons{font-size:1em;cursor:pointer}.hmdl-body .material-icons_lg{font-size:1.33em;cursor:pointer}.hmdl-body .material-icons_2x{font-size:2.0em;cursor:pointer}
-.hmdl-body .mdl-card{display:flex;flex-direction:column;align-items:stretch;min-height:360px}.hmdl-body 
+.icon-button{min-width:32px}.hmdl-body 
+.material-icons{font-size:1em;cursor:pointer}.hmdl-body 
+.material-icons_lg{font-size:1.33em;cursor:pointer;}.hmdl-body 
+.material-icons_2x{font-size:2.0em;cursor:pointer}
+.hmdl-body 
+/*主页文字块背景色*/
+.mdl-card{background-color:#d0eada;display:flex;flex-direction:column;align-items:stretch;min-height:360px}
+.hmdl-body 
 .mdl-card>a{color:inherit;text-decoration:none;font-weight:inherit}
+/*主页块名称*/
 .hmdl-body .mdl-card h3{margin:0}
 .hmdl-body .mdl-card h3.quote:after,.hmdl-body .mdl-card h3.quote:before{display:block;font-size:3em;margin-top:0.5em}.hmdl-body .mdl-card h3.quote:after{content:'”'}.hmdl-body .mdl-card h3.quote:before{content:'“'}
-.hmdl-body .mdl-card h3 a{text-decoration:none}.hmdl-body .mdl-card .meta.meta--fill{justify-content:space-between}.hmdl-body .mdl-card__actions{display:flex;box-sizing:border-box;align-items:center;justify-content:space-between}.hmdl-body .mdl-card__actions:first-child{margin-left:0}.hmdl-body 
+.hmdl-body .mdl-card h3 a{text-decoration:none}.hmdl-body .mdl-card 
+.meta.meta--fill{justify-content:space-between}.hmdl-body 
+.mdl-card__actions{display:flex;box-sizing:border-box;align-items:center;justify-content:space-between}.hmdl-body 
+.mdl-card__actions:first-child{margin-left:0}.hmdl-body 
 .mdl-card__media{box-sizing:border-box;background-size:cover;padding:24px;display:flex;flex-grow:1;flex-direction:row;align-items:flex-end;cursor:pointer}.hmdl-body 
 .mdl-card__media ~ .mdl-card__supporting-text{min-height:20px}
 .hmdl-body 
-.mdl-card__media a{color:inherit}.hmdl-body .mdl-card__title{padding:16px;flex-grow:1}
+.mdl-card__media a{color:inherit}.hmdl-body .mdl-card__title{padding:16px;flex-grow:1;}
 .hmdl-body .mdl-card__title a{color:inherit}
 /*左上角弹性盒子颜色*/
 .hmdl-body .mdl-layout__header,.hmdl-body 
@@ -77,20 +89,32 @@ box-sizing:border-box}
 .hmdl-body nav.mdl-cell a:last-child .mdl-button{margin-right:16px}
 .hmdl-body nav.mdl-cell .mdl-button{color:rgba(0,0,0,0.54);background-color:white}
 
-.hmdl-body nav.mdl-cell .mdl-button i{margin-top:-3px}.hmdl-page blockquote{background:#ddd;border-left:10px solid #aaa;margin:16px 10px;padding:0.5em 10px;font-style:normal}.hmdl-page blockquote:before{content:none}.hmdl-page blockquote:after{content:none}.hmdl-page blockquote p{margin:0 auto}.hmdl-page img{display:block;margin:0 auto;max-width:100%}
+.hmdl-body nav.mdl-cell .mdl-button i{margin-top:-3px}
+.hmdl-page blockquote{background:#ddd;border-left:10px solid #aaa;margin:16px 10px;padding:0.5em 10px;font-style:normal}.hmdl-page blockquote:before{content:none}.hmdl-page blockquote:after{content:none}.hmdl-page blockquote p{margin:0 auto}.hmdl-page img{display:block;margin:0 auto;max-width:100%}
 
 /*设置字体布局*/
-.hmdl-page p{margin:13px auto;font-size:13px;line-height:28px}
+.hmdl-page p{margin:13px auto;font-size:13px;line-height:28px;}
 /*头的高
 .hmdl-page .hmdl-page-banner{height:210px}*/
-.hmdl-page .hmdl-page-comments{background-color:#EEE;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:32px;box-sizing:border-box;width:100%}.hmdl-page .hmdl-page-comments p{margin:0;width:100%}.hmdl-page .hmdl-page-content{border:0;box-sizing:border-box;min-height:64px;
+/*设置正文底部块背景*/
+.hmdl-page .hmdl-page-comments{background-color:#f2eada;;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:32px;box-sizing:border-box;width:100%}.hmdl-page 
+.hmdl-page-comments p{margin:0;width:100%}
+.hmdl-page 
+/*设置文字主题部分背景*/
+.hmdl-page-content{background-color:#d0eada;border:0;box-sizing:border-box;min-height:64px;
 /*两边空余*/
 padding:12px;width:101%}
 
-.hmdl-page .hmdl-page-content h1,.hmdl-page .hmdl-page-content h2,.hmdl-page .hmdl-page-content h3{margin-top:64px}.hmdl-page 
+.hmdl-page 
+.hmdl-page-content h1,.hmdl-page .hmdl-page-content h2,.hmdl-page .hmdl-page-content h3{margin-top:64px}.hmdl-page 
 .hmdl-page-content .highlight{border-radius:4px;padding:8px}.hmdl-page .hmdl-page-content .highlight pre{margin:0}.hmdl-page 
-.custom-header{background-color:transparent}.hmdl-page .section-spacer{flex-grow:1}.hmdl-page-meta{box-sizing:border-box;padding:16px;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;height:auto;width:100%}.hmdl-page-meta>*{display:flex;flex-direction:column}
-.hmdl-page-meta>a{margin-left:16px}.hmdl-page-meta>.meta__favorites{flex-direction:row;margin:0 8px;font-size:13px;font-weight:500}.hmdl-page-meta .minilogo{background-position:center;background-repeat:no-repeat;background-size:50%;border-radius:22px;
+.custom-header{background-color:transparent}.hmdl-page .section-spacer{flex-grow:1}
+/*设置作者栏背景*/
+.hmdl-page-meta{background-color:#f2eada;box-sizing:border-box;padding:16px;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;height:auto;width:100%}
+.hmdl-page-meta>*{display:flex;flex-direction:column;}
+.hmdl-page-meta>a{margin-left:16px}
+.hmdl-page-meta>.meta__favorites{flex-direction:row;margin:0 8px;font-size:13px;font-weight:500}.hmdl-page-meta 
+.minilogo{background-position:center;background-repeat:no-repeat;background-size:50%;border-radius:22px;
 /*作者图像背景*/
 background-color:#f2eada;height:44px;margin-right:16px;width:44px}
 
