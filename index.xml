@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>🌳梧桐落🌳</title>
+    <title>🌳梧桐部落🌳</title>
     <link>https://robinsea.github.io/</link>
-    <description>Recent content on 🌳梧桐落🌳</description>
+    <description>Recent content on 🌳梧桐部落🌳</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
@@ -91,7 +91,7 @@ nohup ./restart.sh &amp;amp;  </description>
 主要针对windows桌面端，指导盾构机司机拼装管片，提供管片和壳体的上下左右间隙值，以及管片和盾构机壳体实时位置关系云图。涉及 最小二乘法、拟合圆等相关算法。
 责任描述：
 - 项目负责人
- 图1 主界面 图2 二级界面    </description>
+  图1 主界面 img src=&#34;https://robinsea.github.io/images/项目截图/盾尾间隙仪/主界面.png&#34; 图2 二级界面    </description>
     </item>
     
     <item>

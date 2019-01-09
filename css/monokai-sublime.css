@@ -7,8 +7,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs {
 	display: block;
 	overflow-x: auto;
-	padding: 7px 0.5em;
-	background: #f2eada;
+	padding: 0;
+ 	background:#b7a68e url(./brown-papersq.png);
 	font-size: 12px;
 	border: 0;
 	font-family: "Consulas", "Courier New", Courier, mono, serif;
@@ -17,9 +17,10 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 	font-weight: 200;
 color:  white-space: pre-wrap;
 	box-sizing: border-box;
+
 }
 .hljs, .hljs-tag, .hljs-subst {
-	color: #a8a8a2;
+	color: #000000;
 }
 .hljs-strong, .hljs-emphasis {
 	color: #a8a8a2;
@@ -67,12 +68,11 @@ color:  white-space: pre-wrap;
 }
 .hljs li {
 	list-style: decimal-leading-zero;
-	margin: 2px !important;
-	line-height: 15px;
-	/*word-break: break-all;
-	word-wrap: break-word;*/
-	width: 100%;
-	box-sizing: border-box;
+	border-left: 2px solid #d0eada !important;
+	padding: 1px!important;
+	margin: 0 !important;
+	white-space: pre;
 }
+
 
 
