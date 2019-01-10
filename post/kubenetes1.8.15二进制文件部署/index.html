@@ -90,7 +90,7 @@
     #time {
       position: relative;
       margin: 0 1px;
-      height: 20px;
+      height: 17px;
     }
     #time canvas {
       position: absolute;
@@ -139,6 +139,7 @@
         </header>
         <div class="mdl-layout__drawer"  style="background-color:#f2eada">
             <span class="mdl-layout-title">🌳梧桐部落🌳</span>
+
             <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="/">主页</a>
             <a class="mdl-navigation__link" href="/post/">文章</a>
@@ -147,6 +148,7 @@
             <a class="mdl-navigation__link" href="/disclaimer/">声明</a>
 
             </nav>
+
 	<font color="#9AE9B9">
 	<center>
 	<p>
@@ -161,6 +163,20 @@
 		</span></span>
 		</center>
 		</font> 
+
+<div id="search">
+	<form action="results.php" method="post">
+	<input name="searchterm" type="search" placeholder="站内搜索">
+	<select name="searchtype">
+			<option value="全部分类">全部分类  </option>
+			<option value="作者">作者</option>
+			<option value="文章名">文章名</option>
+			<option value="项目名">项目名</option>
+	</select>
+	<input name="submit" type="submit" value="搜索" style="width:2.5em;">
+	</form>
+</div>
+
         </div>
 
 
@@ -210,14 +226,14 @@
                         <div>
                             <strong>RobinSea</strong>
                             <span>2018年10月16日
-				<span id="busuanzi_container_page_pv">
   				❤<span id="busuanzi_value_page_pv"></span>次阅读
-				</span></span>
+				</span>
 
                         </div>
                         <div class="section-spacer"></div>
                     </div>
                     <div class="hmdl-page-content mdl-color-text--grey-700 mdl-card__supporting-text">
+
                         <p>1、下载服务程序</p>
 
 <p>下载：<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v1815">CHANGELOG-1.8</a></p>
@@ -272,7 +288,6 @@ WantedBy=multi-user.target
                     <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
                         <a href=>RobinSea</a>
                         <p>If you can&#39;t win the game, change the rules.</p>
-                <div id="time" ></div><script src="/js/time.js"></script>
                     </div>  
                 </div>                
                 <nav class="mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">

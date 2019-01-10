@@ -65,7 +65,17 @@ box-sizing:border-box}
 .hmdl-body .pagination .page-nums:hover{text-decoration:underline}
 .hmdl-body .project-card{min-height:275spx}
 .hmdl-body .project-card .project-title a{font-size:1.2em;line-height:20px;text-decoration:none}
-.hmdl-frontpage .hmdl-profile-card{max-width:360px}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options>button i{transition:transform 0.3s linear;transform:rotate(45deg)}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options{display:flex;flex-direction:column-reverse}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button{display:block;animation-name:enter;animation-fill-mode:forwards;animation-duration:0.1s;transform-origin:bottom center}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(1){animation-delay:0.1s}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(2){animation-delay:0.2s}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options 
+.hmdl-frontpage 
+.hmdl-profile-card{max-width:360px;}
+.hmdl-frontpage 
+.hmdl-profile-card 
+/*主页作者信息，+号*/
+.mdl-button--fab_flinger-container .is-showing-options>button i{transition:transform 0.3s linear;transform:rotate(45deg)}.hmdl-frontpage 
+.hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options{display:flex;flex-direction:column-reverse}.hmdl-frontpage .hmdl-profile-card 
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button{display:block;animation-name:enter;animation-fill-mode:forwards;animation-duration:0.1s;transform-origin:bottom center}.hmdl-frontpage 
+.hmdl-profile-card 
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(1){animation-delay:0.1s}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options 
+.mdl-button--fab_flinger-options button:nth-of-type(2){animation-delay:0.2s}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options 
 .mdl-button--fab_flinger-options button:nth-of-type(3){animation-delay:0.3s}.hmdl-frontpage .hmdl-profile-card .mdl-button--fab_flinger-container.is-showing-options 
 .mdl-button--fab_flinger-options button:nth-of-type(4){animation-delay:0.4s}.hmdl-frontpage .hmdl-profile-card 
 .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(5){animation-delay:0.5s}.hmdl-frontpage .hmdl-profile-card 
@@ -74,7 +84,10 @@ box-sizing:border-box}
 .mdl-button--fab_flinger-options button{transform:scale(0);display:none}
 .hmdl-frontpage .hmdl-profile-card 
 .mdl-card__media{display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:13px;font-weight:500;border-top-left-radius:2px;border-top-right-radius:2px;padding:0px;background-size:contain;background-position:center center;background-repeat:no-repeat}
-.hmdl-frontpage .hmdl-profile-card .mdl-card__supporting-text{background-color:#f5f5f5;border-bottom-left-radius:2px;border-bottom-right-radius:2px}.hmdl-frontpage 
+.hmdl-frontpage .hmdl-profile-card 
+/*主页作者logo名背景*/
+.mdl-card__supporting-text{background-color:#f2eada;border-bottom-left-radius:2px;border-bottom-right-radius:2px}
+.hmdl-frontpage 
 .hmdl-profile-card #fab_ctn{position:absolute;top:calc(100% - 92px);right:16px}
 .hmdl-list{max-width:900px;padding:0;width:100%;margin:0 auto;flex-shrink:0}
 .hmdl-list .mdl-list__divider{display:flex;font-size:13px;line-height:18px;box-sizing:border-box;min-height:48px;width:100%;padding:0;border-bottom:1px solid #dcdcdc}.hmdl-list 
@@ -117,4 +130,19 @@ padding:12px;width:101%}
 .minilogo{background-position:center;background-repeat:no-repeat;background-size:50%;border-radius:22px;
 /*作者图像背景*/
 background-color:#f2eada;height:44px;margin-right:16px;width:44px}
+
+
+#search{text-align:right;border:2.2px solid #cc6600;}
+#search input[type="search"]{font-family:"微软雅黑";background:transparent;height:25px;width:90px;
+font-size:1.2em;padding-left:0px;display:inline-block;vertical-align:top;border:none;}
+select{appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;
+background:url("/images/arrow.png") no-repeat scroll right center transparent;background-color:transparent;
+padding-right:22px;height:25px;}
+select::-ms-expand{display:none;}
+#search input[type^="submit"]{background-color:#cc6600;height:25px;border:none;
+vertical-align:top;padding:0 0;background-position:center;
+background-repeat:no-repeat;}
+#search input[type^="submit"]:hover{cursor:pointer;}
+#search input[type^="submit"]:active{background-color:#996600;}
+
 

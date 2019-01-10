@@ -1,10 +1,10 @@
-var renderer = initTime(12, 10, 16, 3);
+var renderer = initTime(10, 7, 12, 2);
 updateTime();
 
 function updateTime() {
   var date = new Date();
   renderer.render(
-    ' {{ year }} 年 {{ month }} 月 {{ day }} 日 {{ hour }}:{{ minute }}:{{ second }}',
+    ' {{ year }} 年 {{ month }} 月 {{ day }} 日 {{ hour }}:{{ minute }}:{{ second }} ',
     {
       year: date.getFullYear(),
       month: date.getMonth() + 1,
