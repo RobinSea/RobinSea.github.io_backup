@@ -10,7 +10,7 @@
 body{background-size:cover;}
 body:before{background-size:cover;background-attachment:fixed;content:'';will-change:transform;z-index:-1;left:0;right:0;bottom:0;top:0;position:fixed}
 
-main{max-width:900px;display:flex;width:100%;margin:0 auto;
+main{font-family:YouYuan;max-width:900px;display:flex;width:100%;margin:0 auto;
 
 /*设置左上角弹性盒子是否跟滚*/
 flex-shrink:0;
@@ -106,11 +106,11 @@ box-sizing:border-box}
 .hmdl-page blockquote{background:#ddd;border-left:10px solid #aaa;margin:16px 10px;padding:0.5em 10px;font-style:normal}.hmdl-page blockquote:before{content:none}.hmdl-page blockquote:after{content:none}.hmdl-page blockquote p{margin:0 auto}.hmdl-page img{display:block;margin:0 auto;max-width:100%}
 
 /*设置字体布局*/
-.hmdl-page p{margin:13px auto;font-size:13px;line-height:28px;}
+.hmdl-page p{margin:15px auto;font-size:16px;line-height:28px;}
 /*头的高
 .hmdl-page .hmdl-page-banner{height:210px}*/
 /*设置正文底部块背景*/
-.hmdl-page .hmdl-page-comments{background-color:#f2eada;;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:32px;box-sizing:border-box;width:100%}.hmdl-page 
+.hmdl-page .hmdl-page-comments{background-color:#f2eada;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:32px;box-sizing:border-box;width:100%}.hmdl-page 
 .hmdl-page-comments p{margin:0;width:100%}
 .hmdl-page 
 /*设置文字主题部分背景*/
@@ -133,7 +133,7 @@ background-color:#f2eada;height:44px;margin-right:16px;width:44px}
 
 
 #search{text-align:right;border:2.2px solid #cc6600;}
-#search input[type="search"]{font-family:"微软雅黑";background:transparent;height:25px;width:90px;
+#search input[type="search"]{font-family:YouYuan;background:transparent;height:25px;width:90px;
 font-size:1.2em;padding-left:0px;display:inline-block;vertical-align:top;border:none;}
 select{appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;
 background:url("/images/arrow.png") no-repeat scroll right center transparent;background-color:transparent;
@@ -144,5 +144,4 @@ vertical-align:top;padding:0 0;background-position:center;
 background-repeat:no-repeat;}
 #search input[type^="submit"]:hover{cursor:pointer;}
 #search input[type^="submit"]:active{background-color:#996600;}
-
 

@@ -236,21 +236,70 @@
                         <div class="section-spacer"></div>
                     </div>
                     <div class="hmdl-page-content mdl-color-text--grey-700 mdl-card__supporting-text">
+			<h5 class="toc-nav">目录：<nav id="TableOfContents">
+<ul>
+<li><a href="#说明">说明</a>
+<ul>
+<li><a href="#1-静态编译问题">1、静态编译问题</a></li>
+<li><a href="#2-找到合适的ffmpeg包">2、找到合适的ffmpeg包</a></li>
+<li><a href="#3-项目性能调优">3、项目性能调优</a></li>
+</ul></li>
+</ul>
+</nav></h5>
+                        <h1 id="说明">说明</h1>
 
-                        
+<p>因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出</p>
 
-<!-- Your front matter up here -->
+<h2 id="1-静态编译问题">1、静态编译问题</h2>
 
-<h2 id="introduction">Introduction</h2>
+<p>（1）常规使用</p>
 
-<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+<p>1）go1.11.2版本之前</p>
 
-<h2 id="my-heading">My Heading</h2>
+<p>go build -ldflags -extldflags=-static</p>
 
-<p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+<p>2）go1.11.2</p>
 
-<h3 id="my-subheading">My Subheading</h3>
+<p>可以直接在声明C或C++代码区域添加-static</p>
 
+<pre><code>//#cgo CFLAGS: -D_REENTRANT
+//#cgo LDFLAGS:-static 
+//#cgo pkg-config: libavutil
+import &quot;C&quot;
+</code></pre>
+
+<p>（2）go调用ffmpeg</p>
+
+<p>正常情况以上办法就可以编译生成静态可执行文件，但是go调用ffmpeg时就不行了，因为要用到glibc只能进行动态链接，解决办法是修改ffmpeg编译后生成的pkgconfig中的相关*.pc文件。</p>
+
+<p>-Wl,-Bstatic：ffmpeg接口强制静态链接， -Wl,-Bdynamic -lc :glibc强制动态链接 ，将libav-开头的.pc文件改过就好。</p>
+
+<pre><code>Conflicts:
+Libs: -L${libdir} -Wl,-Bstatic -lavutil -lm -Wl,-Bdynamic -lc 
+</code></pre>
+
+<p>注：本人使用过程中发现要先进行动态编译后再进行以上操作才可，原因未明。</p>
+
+<h2 id="2-找到合适的ffmpeg包">2、找到合适的ffmpeg包</h2>
+
+<p>本人在原先<a href="https://github.com/imkira/go-libav">go-libav</a>包的基础上做了很多改动，不知这个包为什么有那么多star，结果确连example都跑不起来，最后无奈进行了些许改动，例如超时函数的实现，音频数据的处理等。修改后的包看<a href="https://github.com/RobinSea/glibav">glibav</a>，暂无时间写example，因项目紧任务重，未来得及进行重新架构，本人的项目主要功能是处理各种视频stream生成jpg和wav数据然后发送到kafka，已经上线使用。</p>
+
+<h2 id="3-项目性能调优">3、项目性能调优</h2>
+
+<p>在实际应用中发现服务性能与完全用C编写性能差距还是很大的，最后使用多个goroutine勉强达到业务需求。以下列举一些性能调优的常用命令：</p>
+
+<pre><code class="language-bash">1、goTool之pprof的使用
+//生成cpu profile
+go test -run=^$ -bench=. -cpuprofile=profile.out
+//生成memery profile
+go test -run=^$ -bench=. -memprofile=profile.out
+//使用原生pprof启动Web UI
+pprof -http=:8080 profile.out
+2、代码优化--goreporter
+goreporter -p [projectRelativePath] -r [reportPath] -e [exceptPackagesName] -f [json / html / text] {-t templatePathIfHtml}
+</code></pre>
+
+<p>后续再将项目具体细节一一剖析。</p>
                     </div>
                     <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
                         <a href=>RobinSea</a>
