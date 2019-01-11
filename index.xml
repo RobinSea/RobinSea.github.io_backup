@@ -158,15 +158,9 @@ nohup ./restart.sh &amp;amp;  </description>
       <pubDate>Tue, 11 Dec 2018 19:35:13 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/golang%E4%BD%BF%E7%94%A8ffmpeg%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/</guid>
-      <description>&lt;p&gt;因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出&lt;/p&gt;
-
-&lt;p&gt;1、静态编译问题&lt;/p&gt;
-
-&lt;p&gt;（1）常规使用&lt;/p&gt;
-
-&lt;p&gt;1）go1.11.2版本之前&lt;/p&gt;
-
-&lt;p&gt;go build -ldflags -extldflags=-static&lt;/p&gt;</description>
+      <description> Introduction One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+My Heading He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+My Subheading </description>
     </item>
     
     <item>
