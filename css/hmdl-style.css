@@ -107,6 +107,13 @@ box-sizing:border-box}
 
 /*设置字体布局*/
 .hmdl-page p{margin:15px auto;font-size:16px;line-height:28px;}
+
+h1{ font-size:25px !important;}
+h2{ font-size:20px !important;}
+h3{ font-size:17px !important;}
+h4{ font-size:17px !important;}
+h5{ font-size:17px !important;}
+h6{ font-size:17px !important;}
 /*头的高
 .hmdl-page .hmdl-page-banner{height:210px}*/
 /*设置正文底部块背景*/
@@ -144,4 +151,5 @@ vertical-align:top;padding:0 0;background-position:center;
 background-repeat:no-repeat;}
 #search input[type^="submit"]:hover{cursor:pointer;}
 #search input[type^="submit"]:active{background-color:#996600;}
+/*# sourceMappingURL=hmdl-style.css.map */
 

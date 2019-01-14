@@ -158,17 +158,13 @@ nohup ./restart.sh &amp;amp;  </description>
       <pubDate>Tue, 11 Dec 2018 19:35:13 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/golang%E4%BD%BF%E7%94%A8ffmpeg%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/</guid>
-      <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
-
-&lt;p&gt;因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出&lt;/p&gt;
+      <description>&lt;p&gt;因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出&lt;/p&gt;
 
 &lt;h2 id=&#34;1-静态编译问题&#34;&gt;1、静态编译问题&lt;/h2&gt;
 
 &lt;p&gt;（1）常规使用&lt;/p&gt;
 
-&lt;p&gt;1）go1.11.2版本之前&lt;/p&gt;
-
-&lt;p&gt;go build -ldflags -extldflags=-static&lt;/p&gt;</description>
+&lt;p&gt;1）go1.11.2版本之前&lt;/p&gt;</description>
     </item>
     
     <item>
