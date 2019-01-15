@@ -91,7 +91,7 @@ nohup ./restart.sh &amp;amp;  </description>
 主要针对windows桌面端，指导盾构机司机拼装管片，提供管片和壳体的上下左右间隙值，以及管片和盾构机壳体实时位置关系云图。涉及 最小二乘法、拟合圆等相关算法。
 责任描述：
 - 项目负责人
-  图1 主界面 img src=&#34;https://robinsea.github.io/images/项目截图/盾尾间隙仪/主界面.png&#34; 图2 二级界面    </description>
+  图1 主界面  图2 二级界面   </description>
     </item>
     
     <item>
@@ -106,7 +106,7 @@ nohup ./restart.sh &amp;amp;  </description>
 主要针对android客户端开发。开发工具qt5.9.5+qtcreator 。该项目主要为了解决公司软件产品注册、发布、监控、查询等需要。
 责任描述：
 - 项目负责人
-  图1 主界面  图2 日历   图3 新版注册机   图4 老版本注册机    </description>
+  图1 主界面  图2 日历  图3 新版注册机   图4 老版本注册机    </description>
     </item>
     
     <item>
@@ -119,7 +119,7 @@ nohup ./restart.sh &amp;amp;  </description>
 - 顶管陀螺自动导向系统
 项目描述 主要仿照海瑞克盾构机匹配的vmt导向系统进行开发。使用vs2013+qt5.6+qcustomplot 开发，参与项目的调研、设计、开发以及硬件选型工作。使用Axure进行原型设计，软件涉及 航天院光纤陀螺仪、里程计、压力传感器硬件通讯及处理。 责任描述：
 - 项目负责人
-项目展示  图1 一级界面 图2 一级界面  图2 一级界面    图4 一级界面  图5 二级界面   图6 三级界面     图7 三级界面 图8 三级界面  图9 二级界面    </description>
+项目展示  图1 一级界面 图2 一级界面 图2 一级界面   图4 一级界面  图5 二级界面  图6 三级界面    图7 三级界面 图8 三级界面 图9 二级界面   </description>
     </item>
     
   </channel>
