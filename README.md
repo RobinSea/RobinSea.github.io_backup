@@ -43,7 +43,7 @@ https://mx-model.ga/
 <details>
   <summary>为什么叫「梧桐部落」？</summary>
 
-因为想引凤凰来啊。
+因为想引凤凰来啊！咳咳，别打，其实本人老家叫梧桐村，梧桐部落更亲切，同时楼主也希望以后能打造一个更完美的网站，使每一个访客都有家的感觉。
 
 </details>
 
@@ -53,18 +53,17 @@ https://mx-model.ga/
 这是某种神秘力量导致的 bug，我修复不了。
 
 </details>
-
 <details>
-  <summary>开门，快递/查水表/社区送温暖/清华大学录取通知书！</summary>
+  <summary>为什么看板娘手机端不能显示？</summary>
 
-没有网购，家里长期停水没有水表，天气太热了不需要社区送温暖，考不上清华没有录取通知书。
+那么小的屏，有可爱的小萝莉看，谁还看我的博客，哼！
 
 </details>
 
 <details>
   <summary>我想构建一个自己的博客，但懒的动？</summary>
 
-这个，看我分享的(blog主题)[https://github.com/RobinSea/HugoMDLSinicization]。
+这个，看我分享的[blog主题](https://github.com/RobinSea/HugoMDLSinicization)。
 
 </details>
 
@@ -72,5 +71,12 @@ https://mx-model.ga/
   <summary>楼主是做前端的吗？</summary>
 
 不是，之前装拖拉机盖儿的，后来整陀螺仪去了，现在搞音视频离线服务。
+
+</details>
+
+<details>
+  <summary>开门，快递/查水表/社区送温暖/清华大学录取通知书！</summary>
+
+没有网购，家里长期停水没有水表，天气太热了不需要社区送温暖，考不上清华没有录取通知书。
 
 </details>
