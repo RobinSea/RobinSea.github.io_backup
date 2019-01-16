@@ -30,7 +30,7 @@ position:relative;
 .material-icons_2x{font-size:2.0em;cursor:pointer}
 .hmdl-body 
 /*主页文字块背景色,project列表高度*/
-.mdl-card{background-color:#d0eada;display:flex;flex-direction:column;align-items:stretch;min-height:250px}
+.mdl-card{background-color:#d0eada;display:flex;flex-direction:column;align-items:stretch;min-height:360px}
 .hmdl-body 
 .mdl-card>a{color:inherit;text-decoration:none;font-weight:inherit}
 /*主页块名称*/
@@ -63,7 +63,9 @@ box-sizing:border-box}
 .hmdl-body .pagination .disabled{color:rgba(0,0,0,0.54)}
 .hmdl-body .pagination .page-nums{padding-left:8px;padding-right:8px;text-decoration:none}
 .hmdl-body .pagination .page-nums:hover{text-decoration:underline}
-.hmdl-body .project-card{min-height:275spx}
+
+/*project list的高*/
+.hmdl-body .project-card{min-height:275px}
 .hmdl-body .project-card .project-title a{font-size:1.2em;line-height:20px;text-decoration:none}
 .hmdl-frontpage 
 .hmdl-profile-card{max-width:360px;}
