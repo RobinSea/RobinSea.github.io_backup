@@ -6,10 +6,26 @@
     <description>Recent content in Test on ༺ཉིཾ*梧桐部落*ཉྀ༻</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Dec 2018 19:35:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 10:55:34 +0000</lastBuildDate>
     
 	<atom:link href="https://robinsea.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于梧桐部落</title>
+      <link>https://robinsea.github.io/post/%E5%85%B3%E4%BA%8E%E6%A2%A7%E6%A1%90%E9%83%A8%E8%90%BD/</link>
+      <pubDate>Wed, 16 Jan 2019 10:55:34 +0000</pubDate>
+      
+      <guid>https://robinsea.github.io/post/%E5%85%B3%E4%BA%8E%E6%A2%A7%E6%A1%90%E9%83%A8%E8%90%BD/</guid>
+      <description>&lt;h2 id=&#34;本博客参考&#34;&gt;本博客参考☃️&lt;/h2&gt;
+
+&lt;p&gt;主题：&lt;a href=&#34;https://github.com/jchatkinson/HugoMDL&#34;&gt;HugoMDL&lt;/a&gt;&lt;br&gt;
+🐧live2d看板娘：&lt;a href=&#34;https://github.com/eeg1412/Live2dHistoire&#34;&gt;伊斯特瓦尔&lt;/a&gt;&lt;br&gt;
+🏔️背景粒子效应：&lt;a href=&#34;https://github.com/whxaxes/canvas-test&#34;&gt;网状粒子效果&lt;/a&gt;&lt;br&gt;
+🌨️访客位置显示：&lt;a href=&#34;https://clustrmaps.com/site/1aim3?utm_source=widget&amp;amp;utm_campaign=widget_ctr&#34;&gt;clustrmaps&lt;/a&gt;&lt;br&gt;
+🚀访客统计：&lt;a href=&#34;http://busuanzi.ibruce.info/&#34;&gt;busuanzi&lt;/a&gt;&lt;br&gt;
+代码高亮：&lt;a href=&#34;https://tonybai.com/2015/09/23/intro-of-gohugo/&#34;&gt;github样式&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>golang使用ffmpeg的那些坑</title>
