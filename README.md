@@ -26,15 +26,51 @@ https://mx-model.ga/
 - 7、左边抽屉不可拖动 X
 
 - 8、添加https://twitter.com/
-- 9、搜索功能 X
-- 10、高亮代码可复制、咖啡色 X
-- 11、网页名称加|
+- 9、搜索功能(添加了搜索框，搜索功能要求助baidu) X
+- 10、高亮代码可复制、咖啡色、代码行号显示（复制未实现） X
+- 11、分网页名称加|
 
 #### 2019年01月08日 
 
-- 1、下滑遮挡地址栏
+- 1、下滑遮挡地址栏(MDL框架才有这个功能)X
 - 2、图片点击设置为自动排版黑箱模式
 
 
-#### 计划
+后续计划
 放自己喜欢的mv\音乐\视频\书籍
+
+## FAQ
+<details>
+  <summary>为什么叫「梧桐部落」？</summary>
+
+因为想引凤凰来啊。
+
+</details>
+
+<details>
+  <summary>为什么搜索功能不能用？</summary>
+
+这是某种神秘力量导致的 bug，我修复不了。
+
+</details>
+
+<details>
+  <summary>开门，快递/查水表/社区送温暖/清华大学录取通知书！</summary>
+
+没有网购，家里长期停水没有水表，天气太热了不需要社区送温暖，考不上清华没有录取通知书。
+
+</details>
+
+<details>
+  <summary>我想构建一个自己的博客，但懒的动？</summary>
+
+这个，看我分享的(blog主题)[https://github.com/RobinSea/HugoMDLSinicization]。
+
+</details>
+
+<details>
+  <summary>楼主是做前端的吗？</summary>
+
+不是，之前装拖拉机盖儿的，后来整陀螺仪去了，现在搞音视频离线服务。
+
+</details>
