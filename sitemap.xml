@@ -99,13 +99,13 @@
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/tags/bio/</loc>
+    <loc>https://robinsea.github.io/categories/bio/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/categories/bio/</loc>
+    <loc>https://robinsea.github.io/tags/bio/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -123,14 +123,14 @@
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/tags/meta/</loc>
-    <lastmod>2019-01-16T10:55:34+00:00</lastmod>
+    <loc>https://robinsea.github.io/categories/meta/</loc>
+    <lastmod>2018-12-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/categories/meta/</loc>
-    <lastmod>2018-12-17T00:00:00+00:00</lastmod>
+    <loc>https://robinsea.github.io/tags/meta/</loc>
+    <lastmod>2019-01-16T10:55:34+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -147,13 +147,13 @@
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/tags/project/</loc>
+    <loc>https://robinsea.github.io/categories/project/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robinsea.github.io/categories/project/</loc>
+    <loc>https://robinsea.github.io/tags/project/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
