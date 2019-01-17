@@ -280,11 +280,29 @@
 <p><img src="/images/项目截图/quc/主页.png" alt="my img" /></p>
 
                     </div>
-                    
-                    <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
-                        <a >刘典武</a>
-                        <p>此乃qt大神所做，吾辈膝行而前,莫敢仰视</p>
-                    </div>  
+   
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="vcomments" style="background-color:#f2eada;"></div>
+    <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#vcomments' ,
+        verify: false,
+        notify: true,
+        appId: '5YHmA2WkBm1VlrFi0OTkxxHR-gzGzoHsz',
+        appKey: 'QM4xJ013bBhiQ6PQ2wfce698',
+        placeholder: 'o(≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
                 </div>                
                 <nav class="mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
                     <a href="/project/%E6%8E%98%E9%94%9A%E9%99%80%E8%9E%BA%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%90%91%E7%B3%BB%E7%BB%9F/">

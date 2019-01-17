@@ -290,14 +290,29 @@
    
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
     <div id="vcomments" style="background-color:#f2eada;"></div>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            appId: '<5YHmA2WkBm1VlrFi0OTkxxHR-gzGzoHsz>',
-            appKey: '<QM4xJ013bBhiQ6PQ2wfce698>'
-        })
-    </script>
+    <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#vcomments' ,
+        verify: false,
+        notify: true,
+        appId: '5YHmA2WkBm1VlrFi0OTkxxHR-gzGzoHsz',
+        appKey: 'QM4xJ013bBhiQ6PQ2wfce698',
+        placeholder: 'o(≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
                 </div>                
                 <nav class="mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
                     <a href="/post/%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E4%B8%80/">
