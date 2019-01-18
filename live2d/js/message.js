@@ -467,12 +467,7 @@ if(!false){
 		};
 	}
 	$(document).ready(function() {
-		var model;
-		if(!norunFlag){
-			model= "model/histoire/model.json";
-		}else{
-			model= "model/platelet/model.json";
-		}
+		var model= "model/histoire/model.json";
 		 
 
 		loadlive2d("live2d", message_Path+model);
