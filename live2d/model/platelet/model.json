@@ -1,6 +1,6 @@
 {
-	"posted": "Dreamer-Paul",
-	"type": "Live2D Model Setting",
+	"posted": "dreamer-paul",
+	"type": "live2D model setting",
 	"name": "model",
 	"model": "model.moc",
 	"textures": [
@@ -19,16 +19,16 @@
 	},
 	"motions":{
 		"idle":[
-			{"file":"motions/Idle.mtn"}
+			{"file":"motions/idle.mtn"}
 		],
         "sleepy":[
-            {"file":"motions/Nemui.mtn"}
+            {"file":"motions/nemui.mtn"}
         ],
 		"flick_head":[
-			{"file":"motions/Anone Synced.mtn"}
+			{"file":"motions/anone synced.mtn"}
 		],
 		"tap_body":[
-			{"file":"motions/Dance.mtn"}
+			{"file":"motions/dance.mtn"}
 		]
 	}
 }

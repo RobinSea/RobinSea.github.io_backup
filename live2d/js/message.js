@@ -17,7 +17,7 @@ if(!window.WebGLRenderingContext){
 	norunFlag = true;
 }
 
-if(!false){
+if(!norunFlag){
 	var hitFlag = false;
 	var AIFadeFlag = false;
 	var liveTlakTimer = null;
