@@ -17,7 +17,7 @@ if(!window.WebGLRenderingContext){
 	norunFlag = true;
 }
 
-if(!norunFlag){
+if(!false){
 	var hitFlag = false;
 	var AIFadeFlag = false;
 	var liveTlakTimer = null;
@@ -467,7 +467,14 @@ if(!norunFlag){
 		};
 	}
 	$(document).ready(function() {
-		var model = "model/histoire/model.json";
+		var model;
+		if(!norunFlag){
+			model= "model/histoire/model.json";
+		}else{
+			model= "model/platelet/model.json";
+		}
+		 
+
 		loadlive2d("live2d", message_Path+model);
 		var askOver = setInterval(function(){
 			var imgData = $('#live2d')[0].toDataURL("image/png").length
