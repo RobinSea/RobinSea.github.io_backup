@@ -10,7 +10,7 @@
 body{background-size:cover;}
 body:before{background-size:cover;background-attachment:fixed;content:'';will-change:transform;z-index:-1;left:0;right:0;bottom:0;top:0;position:fixed}
 
-main{font-family:YouYuan;max-width:900px;display:flex;width:100%;margin:0 auto;
+main{font-family:YouYuan;word-break:break-all;max-width:900px;display:flex;width:100%;margin:0 auto;
 
 /*设置左上角弹性盒子是否跟滚*/
 flex-shrink:0;
