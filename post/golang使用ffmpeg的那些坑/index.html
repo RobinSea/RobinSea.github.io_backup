@@ -241,24 +241,33 @@
 <li><a href="#1-静态编译问题">1、静态编译问题</a></li>
 <li><a href="#2-找到合适的ffmpeg包">2、找到合适的ffmpeg包</a></li>
 <li><a href="#3-项目性能调优">3、项目性能调优</a></li>
+<li><a href="#问题汇总">问题汇总</a></li>
 </ul></li>
 </ul>
 </nav></h5>
 			<center style="color:#239676">🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳</center>
-                        <p>因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出</p>
+                        
+
+<p>因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出</p>
 
 <h2 id="1-静态编译问题">1、静态编译问题</h2>
 
 <p>（1）常规使用</p>
 
-<p>1）go1.11.2版本之前</p>
+<ul>
+<li>go1.11.2版本之前</li>
+</ul>
 
-<p>go build -ldflags -extldflags=-static
- 2）go1.11.2</p>
+<pre><code class="language-bash">   go build -ldflags -extldflags=-static
+</code></pre>
+
+<ul>
+<li>go1.11.2</li>
+</ul>
 
 <p>可以直接在声明C或C++代码区域添加-static</p>
 
-<pre><code>//#cgo CFLAGS: -D_REENTRANT
+<pre><code class="language-go">//#cgo CFLAGS: -D_REENTRANT
 //#cgo LDFLAGS:-static 
 //#cgo pkg-config: libavutil
 import &quot;C&quot;
@@ -295,7 +304,77 @@ pprof -http=:8080 profile.out
 goreporter -p [projectRelativePath] -r [reportPath] -e [exceptPackagesName] -f [json / html / text] {-t templatePathIfHtml}
 </code></pre>
 
-<p>后续再将项目具体细节一一剖析。</p>
+<h2 id="问题汇总">问题汇总</h2>
+
+<p>1、 获取输入流帧率</p>
+
+<p>videoFPS 即输入流的帧率，下面是在原代码例子上改的，可以参考<a href="https://github.com/imkira/go-libav">原示例</a>对照享用</p>
+
+<pre><code class="language-go">func (si *SIConf) openInputVideoStream(ctx *avContext) error {
+	var err error
+
+	// find first video stream
+	if ctx.decStream = videoStream(ctx.decFmt); ctx.decStream == nil {
+		logger.Error(&quot;Could not find a video stream. Aborting...&quot;)
+		return fmt.Errorf(&quot;Could not find a video stream&quot;)
+	}
+
+	codecCtx := ctx.decStream.CodecContext()
+	codecPar := ctx.decStream.CodecParameters()
+	codec := avcodec.FindDecoderByID(codecCtx.CodecID())
+
+	rat := ctx.decFmt.GuessFrameRate(ctx.decStream, nil)
+
+	si.videoFPS = float32(rat.Numerator()) / float32(rat.Denominator())
+
+	if codec == nil {
+		logger.Error(&quot;Could not find decoder:&quot;, codecCtx.CodecID())
+	}
+	if ctx.decCodec, err = avcodec.NewContextWithCodec(codec); err != nil {
+		logger.Error(&quot;Failed to create codec context:&quot;, err)
+	}
+
+	if err := codecCtx.CopyTo(ctx.decCodec, codecPar); err != nil {
+		logger.Error(&quot;Failed to copy codec context:&quot;, err)
+	}
+	if err := ctx.decCodec.SetInt64Option(&quot;refcounted_frames&quot;, 1); err != nil {
+		logger.Error(&quot;Failed to copy codec context:&quot;, err)
+	}
+	//设置多线程
+	options := avutil.NewDictionary()
+	defer options.Free()
+	if err := options.Set(&quot;threads&quot;, &quot;auto&quot;); err != nil {
+		logger.Error(&quot;Failed to set input options:&quot;, err)
+	}
+	if err := ctx.decCodec.OpenWithCodec(codec, options); err != nil {
+		logger.Error(&quot;Failed to open codec:&quot;, err)
+	}
+
+	//set time base
+	ctx.decCodec.SetTimeBase(ctx.decStream.TimeBase())
+
+	// we need a v	log.Println(ctx.decCodec.Width(), ctx.decCodec.Height(), ctx.decCodec.PixelFormat(), ctx.decCodec.TimeBase())ideo filter to push the decoded frames to
+	ctx.srcFilter = addFilter(ctx, &quot;buffer&quot;, &quot;in&quot;)
+	if err = ctx.srcFilter.SetImageSizeOption(&quot;video_size&quot;, ctx.decCodec.Width(), ctx.decCodec.Height()); err != nil {
+		logger.Error(&quot;Failed to set filter option:&quot;, err)
+	}
+	if err = ctx.srcFilter.SetPixelFormatOption(&quot;pix_fmt&quot;, ctx.decCodec.PixelFormat()); err != nil {
+		logger.Error(&quot;Failed to set filter option:&quot;, err)
+	}
+	if err = ctx.srcFilter.SetRationalOption(&quot;time_base&quot;, ctx.decStream.TimeBase()); err != nil {
+		logger.Error(&quot;Failed to set filter option:&quot;, err)
+	}
+	//log.Println(ctx.decCodec.Width(), ctx.decCodec.Height(), ctx.decCodec.PixelFormat(), ctx.decStream.TimeBase())
+
+	if err = ctx.srcFilter.Init(); err != nil {
+		logger.Error(&quot;Failed to initialize buffer filter:&quot;, err)
+	}
+	return nil
+}
+</code></pre>
+
+<p>更多疑问可在评论中说明，本人第一时间回复。</p>
+
                     </div>
 
    
