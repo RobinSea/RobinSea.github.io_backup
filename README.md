@@ -1,21 +1,5 @@
-# 参考素材☃️
-🍎主题：[HugoMDL](https://github.com/jchatkinson/HugoMDL)<br>
-🐧live2d看板娘：[伊斯特瓦尔](https://github.com/eeg1412/Live2dHistoire)<br>
-🏔️背景粒子效应：[网状粒子效果](https://github.com/whxaxes/canvas-test)<br>
-🌨️访客位置显示：[clustrmaps](https://clustrmaps.com/site/1aim3?utm_source=widget&utm_campaign=widget_ctr)<br>
-🚀访客统计：[busuanzi](http://busuanzi.ibruce.info/)<br>
-🍀代码高亮：[github样式](https://tonybai.com/2015/09/23/intro-of-gohugo/)
-<!--more-->
-# 参考网站：🎅
-http://wweir.cc/<br>
-https://tonychenn.cn/<br>
-https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02<br>
-http://n1.likeqi.cn:90/<br>
-https://2heng.xin/theme-sakura/<br>
-https://haremu.com/about/
-# 看板娘模型库：⛸️
-https://mx-model.ga/
 
+<<<<<<< HEAD
 # 功能介绍🌳
 1.博客功能
 
@@ -114,3 +98,5 @@ https://mx-model.ga/
 </details>
 
 博客作为私人使用，为了追求个性，不会完全放出来，还请各位看官见谅
+=======
+>>>>>>> 6b94ff0b916ad9f0e8622eb658ecd9c50b1d381c
