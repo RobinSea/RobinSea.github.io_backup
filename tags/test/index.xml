@@ -17,16 +17,42 @@
       <pubDate>Tue, 11 Dec 2018 19:35:13 +0000</pubDate>
       
       <guid>https://robinsea.github.io/post/golang%E4%BD%BF%E7%94%A8ffmpeg%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/</guid>
-      <description>因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出
-1、静态编译问题 （1）常规使用
- go1.11.2版本之前  go build -ldflags -extldflags=-static   go1.11.2  可以直接在声明C或C++代码区域添加-static
-//#cgo CFLAGS: -D_REENTRANT //#cgo LDFLAGS:-static //#cgo pkg-config: libavutil import &amp;quot;C&amp;quot;  （2）go调用ffmpeg
-正常情况以上办法就可以编译生成静态可执行文件，但是go调用ffmpeg时就不行了，因为要用到glibc只能进行动态链接，解决办法是修改ffmpeg编译后生成的pkgconfig中的相关*.pc文件。
--Wl,-Bstatic：ffmpeg接口强制静态链接， -Wl,-Bdynamic -lc :glibc强制动态链接 ，将libav-开头的.pc文件改过就好。
-Conflicts: Libs: -L${libdir} -Wl,-Bstatic -lavutil -lm -Wl,-Bdynamic -lc  注：本人使用过程中发现要先进行动态编译后再进行以上操作才可，原因未明。
-2、找到合适的ffmpeg包 本人在原先go-libav包的基础上做了很多改动，不知这个包为什么有那么多star，结果确连example都跑不起来，最后无奈进行了些许改动，例如超时函数的实现，音频数据的处理等。修改后的包看glibav，暂无时间写example，因项目紧任务重，未来得及进行重新架构，本人的项目主要功能是处理各种视频stream生成jpg和wav数据然后发送到kafka，已经上线使用。
-3、项目性能调优 在实际应用中发现服务性能与完全用C编写性能差距还是很大的，最后使用多个goroutine勉强达到业务需求。以下列举一些性能调优的常用命令：
-1、goTool之pprof的使用 //生成cpu profile go test -run=^$ -bench=. -cpuprofile=profile.out //生成memery profile go test -run=^$ -bench=. -memprofile=profile.out //使用原生pprof启动Web UI pprof -http=:8080 profile.out 2、代码优化--goreporter goreporter -p [projectRelativePath] -r [reportPath] -e [exceptPackagesName] -f [json / html / text] {-t templatePathIfHtml}  问题汇总 1、 获取输入流帧率</description>
+      <description>&lt;p&gt;因业务需求需要用到golang调用ffmpeg，期间遇到各种曲折离奇的事情，例如服务运行时崩溃，流解析出错等等，还好最终拨开云雾见日出&lt;/p&gt;
+
+&lt;h2 id=&#34;1-静态编译问题&#34;&gt;1、静态编译问题&lt;/h2&gt;
+
+&lt;p&gt;（1）常规使用&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;go1.11.2版本之前&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;   go build -ldflags -extldflags=-static
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;go1.11.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;可以直接在声明C或C++代码区域添加-static&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;//#cgo CFLAGS: -D_REENTRANT
+//#cgo LDFLAGS:-static 
+//#cgo pkg-config: libavutil
+import &amp;quot;C&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（2）go调用ffmpeg&lt;/p&gt;
+
+&lt;p&gt;正常情况以上办法就可以编译生成静态可执行文件，但是go调用ffmpeg时就不行了，因为要用到glibc只能进行动态链接，解决办法是修改ffmpeg编译后生成的pkgconfig中的相关*.pc文件。&lt;/p&gt;
+
+&lt;p&gt;-Wl,-Bstatic：ffmpeg接口强制静态链接， -Wl,-Bdynamic -lc :glibc强制动态链接 ，将libav-开头的.pc文件改过就好。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Conflicts:
+Libs: -L${libdir} -Wl,-Bstatic -lavutil -lm -Wl,-Bdynamic -lc 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注：本人使用过程中发现要先进行动态编译后再进行以上操作才可，原因未明。&lt;/p&gt;</description>
     </item>
     
     <item>
