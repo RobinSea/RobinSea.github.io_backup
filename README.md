@@ -101,7 +101,7 @@ cd system_install
 ./setup-etcd.sh 192.168.6.55 etcd03
 ```
 <a name="master"></a>
-- 部署master
+- 部署master  
 作为正常工作时运行的master执行
 ```bash
 cd system_install
@@ -127,7 +127,7 @@ cd node/
 ./setup-k8snode.sh 192.168.6.55 false true 
 ```
 
-<a name="master"></a>
+<a name="master&node"></a>
 - master同时做node使用
 ```bash
 cd system_install/node/
