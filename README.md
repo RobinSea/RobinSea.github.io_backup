@@ -48,7 +48,7 @@ yum install -y keepalived
 
 <a name="install"></a>
 ### 3 安装
-
+<a name="changeScript"></a>
 #### 修改全局变量脚本
 ```bash
 #在当前目录找到env.sh，手动修改脚本中的以下环境变量为当前部署机器信息
@@ -141,6 +141,8 @@ cd system_install/node/
 
 <a name="upgrade"></a>
 ### 升级
+
+
 
 
 
