@@ -1,3 +1,12 @@
+{{< highlight go "linenos=table,linenostart=1" >}}
+项目
+- 关于本人
+- 免责声明
+- 代码高亮并显示代码行 
+- 计划功能
+{{< / highlight >}}
+
+
 # 功能介绍🌳
 1.博客功能
 
