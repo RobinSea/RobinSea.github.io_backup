@@ -8,7 +8,7 @@
   - [配置etcd高可用](#etcdCfg)
   - [部署master](#master)
   - [部署node](#node)
-  - [master同时做node使用](#master&node)
+  - [master同时做node使用](#masterAndNode)
 - [4 部署镜像](#deployment)
 - [5 升级](#upgrade)
 ------
@@ -49,7 +49,7 @@ yum install -y keepalived
 <a name="install"></a>
 ### 3 安装
 
-- 修改全局变量脚本
+#### 修改全局变量脚本
 ```bash
 #在当前目录找到env.sh，手动修改脚本中的以下环境变量为当前部署机器信息
 1、	获取BOOTSTRAP_TOKEN
@@ -78,7 +78,7 @@ etcd 集群间通信的 IP 和端口,例如：
 ETCD_NODES="etcd01=https://192.168.6.50:2380,etcd02=https://192.168.6.51:2380,etcd03=https://192.168.6.55:2380"
 ```
 <a name="sslCfg"></a>
-- 配置证书及分发
+#### 配置证书及分发
 ```bash
 #执行生成证书脚本
 ./create-certs.sh
@@ -87,7 +87,7 @@ scp  -r   ./system_install  root@192.168.6.51:/root/
 scp  -r   ./system_install  root@192.168.6.55:/root/
 ```
 <a name="etcdCfg"></a>
-- 配置etcd高可用
+#### 配置etcd高可用
 ```bash
 #配置k8s系统的system环境，在master1、master2、node上均执行，没有先后之分
 cd system_install
@@ -101,7 +101,7 @@ cd system_install
 ./setup-etcd.sh 192.168.6.55 etcd03
 ```
 <a name="master"></a>
-- 部署master  
+#### 部署master  
 作为正常工作时运行的master执行
 ```bash
 cd system_install
@@ -118,7 +118,7 @@ cd master
 ```
 
 <a name="node"></a>
-- 部署node
+#### 部署node
 ```bash
 #配置Kubernetes系统的system环境
 cd system_install
@@ -127,8 +127,8 @@ cd node/
 ./setup-k8snode.sh 192.168.6.55 false true 
 ```
 
-<a name="master&node"></a>
-- master同时做node使用
+<a name="master"></a>
+#### master同时做node使用
 ```bash
 cd system_install/node/
 #配置Kubernetes系统的node环境,参数含义分别是,当前node ip、当前主机是否为master、是否第一次执行
@@ -141,6 +141,7 @@ cd system_install/node/
 
 <a name="upgrade"></a>
 ### 升级
+
 
 
 
